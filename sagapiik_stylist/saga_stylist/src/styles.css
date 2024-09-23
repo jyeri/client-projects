@@ -1,6 +1,6 @@
 /* header font placeholder */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Kaushan+Script&display=swap');
-/* sticky header placeholder */ 
+/* sticky header placeholder */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
 
 @tailwind base;
@@ -10,105 +10,105 @@
 /* Custom CSS */
 
 @layer {
-  :root {
-    --header-row-height: 50px;
-    --header-height: calc(var(--header-row-height) * 2);
-    --hero-height: calc(100svh - var(--header-height));
-  }
+    :root {
+        --header-row-height: 50px;
+        --header-height: calc(var(--header-row-height) * 2);
+        --hero-height: calc(100svh - var(--header-height));
+    }
 }
 
 /* Custom CSS */
 
 input {
-  display: none;
+    display: none;
 }
 
 .grid {
-  display: grid;
-  width: 45px;
-  height: 45px;
-  position: relative;
-  top: 0;
-  padding: 0;
-  margin: 0;
+    display: grid;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 0;
+    padding: 0;
+    margin: 0;
 }
 
 label {
-  display: block;
-  cursor: pointer;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 @media (min-aspect-ratio: 1/1) {
-  label {
-    width: 100%;
-    height: 100%;
-  }
+    label {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .menu--1 label {
-  bottom: 0;
-  right: 0;
+    bottom: 0;
+    right: 0;
 }
 
 path {
-  fill: none;
-  stroke: #000000;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  --length: 24;
-  --offset: -38;
-  stroke-dasharray: var(--length) var(--total-length);
-  stroke-dashoffset: var(--offset);
-  transition: all .8s cubic-bezier(.645, .045, .355, 1);
+    fill: none;
+    stroke: #000000;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    --length: 24;
+    --offset: -38;
+    stroke-dasharray: var(--length) var(--total-length);
+    stroke-dashoffset: var(--offset);
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 circle {
-  fill: #fff3;
-  opacity: 0;
+    fill: #fff3;
+    opacity: 0;
 }
 
 label:hover circle {
-  opacity: 1;
+    opacity: 1;
 }
 
 .cross input:checked + svg .line--1,
 .cross input:checked + svg .line--3 {
-  --length: 22.627416998;
+    --length: 22.627416998;
 }
 
 .cross input:checked + svg .line--2 {
-  --length: 0;
+    --length: 0;
 }
 
 .back input:checked + svg .line--1,
 .back input:checked + svg .line--3 {
-  --length: 8.602325267;
+    --length: 8.602325267;
 }
 
 .menu--1 {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .menu--1 .line--1,
 .menu--1 .line--3 {
-  --total-length: 126.64183044433594;
+    --total-length: 126.64183044433594;
 }
 
 .menu--1 .line--2 {
-  --total-length: 70;
+    --total-length: 70;
 }
 
 .menu--1 input:checked + svg .line--1,
 .menu--1 input:checked + svg .line--3 {
-  --offset: -94.1149185097;
+    --offset: -94.1149185097;
 }
 
 .menu--1 input:checked + svg .line--2 {
-  --offset: -50;
+    --offset: -50;
 }
