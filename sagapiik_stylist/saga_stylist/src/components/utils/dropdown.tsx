@@ -27,7 +27,7 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
     return (
         <div
             className={twMerge(
-                'relative right-10 grid h-screen w-screen bg-background font-medium text-white',
+                'relative right-5 md:right-10 grid h-screen w-screen bg-background font-medium text-white',
                 sizeClassNames[size],
                 className
             )}
@@ -71,21 +71,21 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                     )}
                 >
                     <ul className="flex flex-col gap-2 overflow-hidden rounded-lg border border-backgroundContrast p-2">
-                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
-                            <Animatedlink href="#editorial" className="text-xl">
+                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:text-[red]">
+                            <Animatedlink href="#editorial" className="text-base md:text-xl">
                                 Editorial
                             </Animatedlink>
                         </li>
-                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
+                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:text-[red]">
                             <Animatedlink
                                 href="#commercial"
-                                className="text-xl"
+                                className="text-base md:text-xl"
                             >
                                 Commercial
                             </Animatedlink>
                         </li>
-                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
-                            <Animatedlink href="#about-me" className="text-xl">
+                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-outh hover:text-[red]">
+                            <Animatedlink href="#about-me" className="text-base md:text-xl">
                                 About Me
                             </Animatedlink>
                         </li>
