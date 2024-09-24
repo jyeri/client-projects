@@ -12,7 +12,7 @@ export const Animatedlink = ({ children, href, className }: linkProps) => {
         <motion.a
             href={href}
             className={twMerge(
-                'relative block overflow-hidden whitespace-nowrap font-headers',
+                'relative block gap-2 overflow-hidden whitespace-nowrap font-headers',
                 className
             )}
             initial="initial"
@@ -27,7 +27,7 @@ export const Animatedlink = ({ children, href, className }: linkProps) => {
                         <motion.span
                             variants={{
                                 initial: {
-                                    y: '50%',
+                                    y: '100%',
                                 },
                                 hovered: {
                                     y: '-100%',
@@ -53,7 +53,7 @@ export const Animatedlink = ({ children, href, className }: linkProps) => {
                                     y: '100%',
                                 },
                                 hovered: {
-                                    y: '-50%',
+                                    y: '0',
                                 },
                             }}
                             key={index}

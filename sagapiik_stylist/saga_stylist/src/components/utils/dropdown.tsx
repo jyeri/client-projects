@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Animatedlink } from './animatedlink';
+import { motion } from 'framer-motion';
+import { Container } from '../container/container';
 import '../../styles.css'; // Import the CSS file
 
 type Props = {
@@ -27,7 +28,7 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
     return (
         <div
             className={twMerge(
-                'relative right-5 md:right-10 grid h-screen w-screen bg-background font-medium text-white',
+                'relative right-5 grid bg-background font-medium text-white md:right-10',
                 sizeClassNames[size],
                 className
             )}
@@ -64,32 +65,64 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                 </label>
                 <div
                     className={twMerge(
-                        'absolute left-[-100%] top-14 transform bg-white text-black shadow-lg transition-all duration-300 ease-out',
+                        'fixed left-0 top-[--header-row-height-border] w-screen transform bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
                         isChecked
                             ? 'scale-100 opacity-100'
                             : 'pointer-events-none scale-90 opacity-0'
                     )}
                 >
-                    <ul className="flex flex-col gap-2 overflow-hidden rounded-lg border border-backgroundContrast p-2">
-                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:text-[red]">
-                            <Animatedlink href="#editorial" className="text-base md:text-xl">
-                                Editorial
-                            </Animatedlink>
-                        </li>
-                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:text-[red]">
-                            <Animatedlink
-                                href="#commercial"
-                                className="text-base md:text-xl"
-                            >
-                                Commercial
-                            </Animatedlink>
-                        </li>
-                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-outh hover:text-[red]">
-                            <Animatedlink href="#about-me" className="text-base md:text-xl">
-                                About Me
-                            </Animatedlink>
-                        </li>
-                    </ul>
+                    <Container className="relative w-full bg-background">
+                        <ul className="flex flex-col">
+                            <li className="cursor-pointer font-sans transition-colors duration-200 ease-in-out">
+                                <motion.a href="#editorial">
+                                    <motion.div
+                                        className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
+                                        whileHover={{ scale: 1.01 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        transition={{
+                                            type: 'spring',
+                                            stiffness: 400,
+                                            damping: 25,
+                                        }}
+                                    >
+                                        Editorial
+                                    </motion.div>
+                                </motion.a>
+                            </li>
+                            <li className="cursor-pointer font-sans transition-colors duration-200 ease-in-out">
+                                <motion.a href="#commercial">
+                                    <motion.div
+                                        className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
+                                        whileHover={{ scale: 1.01 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        transition={{
+                                            type: 'spring',
+                                            stiffness: 400,
+                                            damping: 25,
+                                        }}
+                                    >
+                                        Commercial
+                                    </motion.div>
+                                </motion.a>
+                            </li>
+                            <li className="ease-in-outh cursor-pointer transition-colors duration-200">
+                                <motion.a href="#about-me">
+                                    <motion.div
+                                        className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
+                                        whileHover={{ scale: 1.01 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        transition={{
+                                            type: 'spring',
+                                            stiffness: 400,
+                                            damping: 25,
+                                        }}
+                                    >
+                                        About me
+                                    </motion.div>
+                                </motion.a>
+                            </li>
+                        </ul>
+                    </Container>
                 </div>
             </div>
         </div>

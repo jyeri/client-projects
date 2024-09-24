@@ -38,31 +38,33 @@ export const Header = () => {
                         href="/"
                         className="flex h-[--header-row-height] items-center"
                     >
-                        <p className="px-10 font-headers text-lg font-light tracking-widest">
+                        <p className="px-2 font-headers text-lg font-light tracking-widest sm:px-10">
                             stylist
                         </p>
                         <span className="sr-only">Back to homepage</span>
                     </a>
-                    <nav className="flex space-x-2 sm:space-x-6 md:space-x-10">
-                        <Animatedlink
-                            className="text-sm uppercase sm:text-base md:text-lg"
-                            href="#editorial"
-                        >
-                            Editorial
-                        </Animatedlink>
-                        <Animatedlink
-                            className="text-sm uppercase sm:text-base md:text-lg"
-                            href="#commercial"
-                        >
-                            Commercial
-                        </Animatedlink>
-                        <Animatedlink
-                            className="text-sm uppercase sm:text-base md:text-lg"
-                            href="#about-me"
-                        >
-                            About Me
-                        </Animatedlink>
-                    </nav>
+                    <div className="flex h-[--header-row-height] items-center">
+                        <nav className="flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-10">
+                            <Animatedlink
+                                className="text-xs uppercase md:text-base lg:text-lg"
+                                href="#editorial"
+                            >
+                                Editorial
+                            </Animatedlink>
+                            <Animatedlink
+                                className="text-xs uppercase md:text-base lg:text-lg"
+                                href="#commercial"
+                            >
+                                Commercial
+                            </Animatedlink>
+                            <Animatedlink
+                                className="text-xs uppercase md:text-base lg:text-lg"
+                                href="#about-me"
+                            >
+                                About Me
+                            </Animatedlink>
+                        </nav>
+                    </div>
                 </Container>
             </header>
             <div className="sticky top-0 z-20 border-b-2 border-backgroundContrast bg-background text-black">
