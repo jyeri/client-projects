@@ -1,13 +1,15 @@
 import { Header } from './components/header/header';
-import { Animatedlink } from './components/utils/animatedlink';
+import { Editorial } from './components/editorial/editorial';
 
 function App() {
     return (
         <>
             <Header />
-            <div className="h-[300vh]">
-                <h1>content</h1>
-            </div>
+            <main>
+                <div className="relative z-10 bg-background">
+                    <Editorial />
+                </div>
+            </main>
             <div>
                 <h1>footer</h1>
             </div>

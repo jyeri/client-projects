@@ -113,3 +113,8 @@ label:hover circle {
 .menu--1 input:checked + svg .line--2 {
     --offset: -50;
 }
+
+/* Custom CSS for perspective and snapping */
+.custom-perspective {
+    perspective: 500px;
+}
