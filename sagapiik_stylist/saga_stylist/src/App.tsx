@@ -1,4 +1,5 @@
 import { Header } from './components/header/header';
+import { Animatedlink } from './components/utils/animatedlink';
 
 function App() {
     return (

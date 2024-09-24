@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { Animatedlink } from './animatedlink';
 import '../../styles.css'; // Import the CSS file
 
 type Props = {
@@ -63,21 +64,30 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                 </label>
                 <div
                     className={twMerge(
-                        'absolute left-0 top-14 transform bg-white text-black shadow-lg transition-all duration-300 ease-out',
+                        'absolute left-[-100%] top-14 transform bg-white text-black shadow-lg transition-all duration-300 ease-out',
                         isChecked
                             ? 'scale-100 opacity-100'
-                            : 'pointer-events-none scale-95 opacity-0'
+                            : 'pointer-events-none scale-90 opacity-0'
                     )}
                 >
-                    <ul className="flex flex-col overflow-hidden rounded-lg border border-backgroundContrast">
-                        <li className="cursor-pointer px-4 py-2 font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
-                            Editorial
+                    <ul className="flex flex-col gap-2 overflow-hidden rounded-lg border border-backgroundContrast p-2">
+                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
+                            <Animatedlink href="#editorial" className="text-xl">
+                                Editorial
+                            </Animatedlink>
                         </li>
-                        <li className="cursor-pointer px-4 py-2 font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
-                            Commercial
+                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
+                            <Animatedlink
+                                href="#commercial"
+                                className="text-xl"
+                            >
+                                Commercial
+                            </Animatedlink>
                         </li>
-                        <li className="cursor-pointer px-4 py-2 font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
-                            About Me
+                        <li className="cursor-pointer font-headers transition-colors duration-200 ease-in-out hover:bg-backgroundContrast">
+                            <Animatedlink href="#about-me" className="text-xl">
+                                About Me
+                            </Animatedlink>
                         </li>
                     </ul>
                 </div>

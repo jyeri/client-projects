@@ -1,5 +1,6 @@
 import { Container } from '../container/container';
 import { Dropdownmenu } from '../utils/dropdown';
+import { Animatedlink } from '../utils/animatedlink';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
@@ -42,16 +43,25 @@ export const Header = () => {
                         </p>
                         <span className="sr-only">Back to homepage</span>
                     </a>
-                    <nav className="flex space-x-16">
-                        <a href="#editorial" className="font-headers text-lg">
+                    <nav className="flex space-x-2 sm:space-x-6 md:space-x-10">
+                        <Animatedlink
+                            className="text-sm uppercase sm:text-base md:text-lg"
+                            href="#editorial"
+                        >
                             Editorial
-                        </a>
-                        <a href="#commercial" className="font-headers text-lg">
+                        </Animatedlink>
+                        <Animatedlink
+                            className="text-sm uppercase sm:text-base md:text-lg"
+                            href="#commercial"
+                        >
                             Commercial
-                        </a>
-                        <a href="#about-me" className="font-headers text-lg">
+                        </Animatedlink>
+                        <Animatedlink
+                            className="text-sm uppercase sm:text-base md:text-lg"
+                            href="#about-me"
+                        >
                             About Me
-                        </a>
+                        </Animatedlink>
                     </nav>
                 </Container>
             </header>
