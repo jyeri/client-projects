@@ -5,7 +5,7 @@ function App() {
     return (
         <>
             <Header />
-            <main>
+            <main className="h-screen overflow-hidden"> {/* Set height to full screen and hide overflow */}
                 <div className="relative z-10 bg-background">
                     <Editorial />
                 </div>
