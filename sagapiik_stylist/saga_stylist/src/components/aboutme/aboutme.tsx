@@ -13,23 +13,35 @@ export const Aboutme = () => {
     return (
         <Container>
             {/* First Section - Image and Text */}
-            <section className="flex flex-col md:flex-row items-center justify-between p-10">
+            <section className="flex flex-col items-center justify-between p-10 md:flex-row">
                 <div className="w-full md:w-1/2">
-                    <img src="/public/images/ph_aboutme/aboutme_ph.png" alt="About Me" className="w-full h-auto" />
+                    <img
+                        src="/public/images/ph_aboutme/aboutme_ph.png"
+                        alt="About Me"
+                        className="h-auto w-full"
+                    />
                 </div>
-                <div className="w-full md:w-1/2 p-5">
-                    <h2 className="text-3xl font-bold font-headers">About Me</h2>
-                    <p className="mt-5 text-lg font-headers">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula, risus eget imperdiet ullamcorper, lacus augue tempor nisl, in malesuada risus libero ac neque.
+                <div className="w-full p-5 md:w-1/2">
+                    <h2 className="font-headers text-3xl font-bold">
+                        About Me
+                    </h2>
+                    <p className="mt-5 font-headers text-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque vehicula, risus eget imperdiet ullamcorper,
+                        lacus augue tempor nisl, in malesuada risus libero ac
+                        neque.
                     </p>
                 </div>
             </section>
 
             {/* Second Section - Timeline */}
-            <section ref={containerRef} className="relative h-screen overflow-hidden">
+            <section
+                ref={containerRef}
+                className="relative h-screen overflow-hidden"
+            >
                 {/* Wavy Arrow - Using Tailwind CSS for visualization */}
-                <div className="absolute inset-0 flex justify-center pointer-events-none">
-                    <div className="w-2 h-full bg-black bg-[repeating-linear-gradient(transparent_0px,transparent_20px,black_20px,black_40px)]"></div>
+                <div className="pointer-events-none absolute inset-0 flex justify-center">
+                    <div className="h-full w-2 bg-black bg-[repeating-linear-gradient(transparent_0px,transparent_20px,black_20px,black_40px)]"></div>
                 </div>
 
                 {/* Timeline Items */}
@@ -37,15 +49,19 @@ export const Aboutme = () => {
                     {timelineData.map((item, index) => (
                         <motion.div
                             key={index}
-                            className="timeline-item flex items-center w-full"
+                            className="timeline-item flex w-full items-center"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ duration: 0.5, ease: 'easeInOut' }}
                         >
                             {/* Alternating Year and Paragraph */}
-                            <div className={`w-1/2 p-5 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                                <p className="font-bold text-2xl">{item.year}</p>
+                            <div
+                                className={`w-1/2 p-5 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}
+                            >
+                                <p className="text-2xl font-bold">
+                                    {item.year}
+                                </p>
                                 <p>{item.text}</p>
                             </div>
                             <div className={`w-1/2 p-5 text-left`}>
@@ -61,8 +77,17 @@ export const Aboutme = () => {
 
 // Sample timeline data for demonstration
 const timelineData = [
-    { year: '2020', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+    {
+        year: '2020',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    },
     { year: '2021', text: 'Pellentesque vehicula risus eget imperdiet.' },
-    { year: '2022', text: 'Fusce aliquet lorem id purus ullamcorper, et venenatis erat.' },
-    { year: '2023', text: 'Integer feugiat sapien nec facilisis pellentesque.' },
+    {
+        year: '2022',
+        text: 'Fusce aliquet lorem id purus ullamcorper, et venenatis erat.',
+    },
+    {
+        year: '2023',
+        text: 'Integer feugiat sapien nec facilisis pellentesque.',
+    },
 ];

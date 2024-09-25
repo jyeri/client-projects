@@ -8,7 +8,12 @@ type linkProps = {
     className?: string;
 };
 
-export const Animatedlink = ({ children, href , onClick, className }: linkProps) => {
+export const Animatedlink = ({
+    children,
+    href,
+    onClick,
+    className,
+}: linkProps) => {
     return (
         <motion.a
             href={href}
