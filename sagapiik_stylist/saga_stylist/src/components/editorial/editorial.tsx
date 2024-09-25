@@ -19,20 +19,23 @@ function useParallax(value: MotionValue<number>, distance: number) {
 function Image({ src, alt, id }: { src: string; alt: string; id: number }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, container: ref }); // Correctly link scroll to each image
-    const y = useParallax(scrollYProgress, 150);  // Parallax effect for vertical motion of the text
+    const y = useParallax(scrollYProgress, 150); // Parallax effect for vertical motion of the text
 
     return (
-        <section ref={ref} className="relative flex h-[calc(100vh-var(--header-height))] snap-center items-center justify-center perspective-500">
-            <div className="relative w-72 h-96 max-h-[90vh] overflow-hidden bg-white">
+        <section
+            ref={ref}
+            className="perspective-500 relative flex h-[calc(100vh-var(--header-height))] snap-center items-center justify-center"
+        >
+            <div className="relative h-96 max-h-[90vh] w-72 overflow-hidden bg-white">
                 <img
                     src={src}
                     alt={alt}
-                    className="absolute left-0 top-0 w-full h-full object-cover"
+                    className="absolute left-0 top-0 h-full w-full object-cover"
                 />
             </div>
             <motion.h2
                 style={{ y }} // Parallax effect on the text
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-bold text-red" // Centered text
+                className="text-red absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl font-bold" // Centered text
             >
                 {`#00${id}`}
             </motion.h2>
