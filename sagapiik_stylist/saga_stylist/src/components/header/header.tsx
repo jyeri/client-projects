@@ -16,13 +16,14 @@ export const Header = () => {
             { threshold: 0 }
         );
 
-        if (headerRef.current) {
-            observer.observe(headerRef.current);
+        const currentHeaderRef = headerRef.current;
+        if (currentHeaderRef) {
+            observer.observe(currentHeaderRef);
         }
 
         return () => {
-            if (headerRef.current) {
-                observer.unobserve(headerRef.current);
+            if (currentHeaderRef) {
+                observer.unobserve(currentHeaderRef);
             }
         };
     }, []);
@@ -67,7 +68,7 @@ export const Header = () => {
                     </div>
                 </Container>
             </header>
-            <div className="sticky top-0 z-20 border-b-2 border-backgroundContrast bg-background text-black">
+            <div className="sticky top-0 z-20 border-b border-backgroundContrast bg-background text-black">
                 <Container className="flex min-h-[--header-row-height] items-center justify-between">
                     <a href="/">
                         <p className="font-headers text-2xl font-semibold tracking-widest">
