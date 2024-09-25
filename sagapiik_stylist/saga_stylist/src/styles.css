@@ -20,6 +20,34 @@
 
 /* Custom CSS */
 
+/* Scrollbar container */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: #e0e0e0; /* Color of the track */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: #333; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded scrollbar */
+    border: 2px solid #e0e0e0; /* Optional border around the thumb */
+}
+
+/* Hover effect on scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darken the scrollbar thumb when hovered */
+}
+
+/* Scrollbar corner (for when both x and y scrollbars are visible) */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 input {
     display: none;
 }
@@ -118,3 +146,6 @@ label:hover circle {
 .custom-perspective {
     perspective: 500px;
 }
+
+/* Aboutme */
+

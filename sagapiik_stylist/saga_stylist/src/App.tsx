@@ -1,12 +1,39 @@
+import { useState } from 'react';
 import { Header } from './components/header/header';
 import { Editorial } from './components/editorial/editorial';
+import { Factorial } from './components/factorial/factorial';
+import { Aboutme } from './components/aboutme/aboutme';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function App() {
+    const [activeComponent, setActiveComponent] = useState('Editorial');
+
+    const renderContent = () => {
+        switch (activeComponent) {
+            case 'Factorial':
+                return <Factorial />;
+            case 'AboutMe':
+                return <Aboutme />;
+            default:
+                return <Editorial />;
+        }
+    };
+
     return (
         <>
-            <Header />
+            <Header setActiveComponent={setActiveComponent} />
             <main className="relative">
-                <Editorial />
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={activeComponent}
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 50 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        {renderContent()}
+                    </motion.div>
+                </AnimatePresence>
             </main>
         </>
     );

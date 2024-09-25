@@ -4,13 +4,15 @@ import { twMerge } from 'tailwind-merge';
 type linkProps = {
     children: React.ReactNode;
     href: string;
+    onClick: () => void;
     className?: string;
 };
 
-export const Animatedlink = ({ children, href, className }: linkProps) => {
+export const Animatedlink = ({ children, href , onClick, className }: linkProps) => {
     return (
         <motion.a
             href={href}
+            onClick={onClick} // Trigger the onClick event
             className={twMerge(
                 'relative block gap-2 overflow-hidden whitespace-nowrap font-headers',
                 className
@@ -26,12 +28,8 @@ export const Animatedlink = ({ children, href, className }: linkProps) => {
                     children.split('').map((letter, index) => (
                         <motion.span
                             variants={{
-                                initial: {
-                                    y: '100%',
-                                },
-                                hovered: {
-                                    y: '-100%',
-                                },
+                                initial: { y: '100%' },
+                                hovered: { y: '-100%' },
                             }}
                             key={index}
                             className="inline-block"
@@ -49,12 +47,8 @@ export const Animatedlink = ({ children, href, className }: linkProps) => {
                     children.split('').map((letter, index) => (
                         <motion.span
                             variants={{
-                                initial: {
-                                    y: '100%',
-                                },
-                                hovered: {
-                                    y: '0',
-                                },
+                                initial: { y: '100%' },
+                                hovered: { y: '0' },
                             }}
                             key={index}
                             className="inline-block"

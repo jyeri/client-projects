@@ -2,22 +2,23 @@ import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
 import { Container } from '../container/container';
-import '../../styles.css'; // Import the CSS file
 
 type Props = {
+    setActiveComponent: (component: string) => void;
     size?: 'small' | 'medium' | 'large';
     className?: string;
 };
 
-export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
+export const Dropdownmenu = ({
+    setActiveComponent,
+    size = 'medium',
+    className,
+}: Props) => {
     const [isChecked, setIsChecked] = useState(false);
 
     const sizeClassNames = {
-        // 12px
         small: 'text-xs px-2 py-1',
-        // 14px
         medium: 'text-sm px-5 py-3',
-        // 17px
         large: 'text-base px-8 py-4',
     };
 
@@ -74,7 +75,11 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                     <Container className="relative w-full bg-background">
                         <ul className="flex flex-col">
                             <li className="cursor-pointer font-sans transition-colors duration-200 ease-in-out">
-                                <motion.a href="#editorial">
+                                <motion.a
+                                    onClick={() =>
+                                        setActiveComponent('Editorial')
+                                    }
+                                >
                                     <motion.div
                                         className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
                                         whileHover={{ scale: 1.01 }}
@@ -90,7 +95,11 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                                 </motion.a>
                             </li>
                             <li className="cursor-pointer font-sans transition-colors duration-200 ease-in-out">
-                                <motion.a href="#commercial">
+                                <motion.a
+                                    onClick={() =>
+                                        setActiveComponent('Factorial')
+                                    }
+                                >
                                     <motion.div
                                         className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
                                         whileHover={{ scale: 1.01 }}
@@ -101,12 +110,16 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                                             damping: 25,
                                         }}
                                     >
-                                        Commercial
+                                        Factorial
                                     </motion.div>
                                 </motion.a>
                             </li>
-                            <li className="ease-in-outh cursor-pointer transition-colors duration-200">
-                                <motion.a href="#about-me">
+                            <li className="cursor-pointer transition-colors duration-200 ease-in-out">
+                                <motion.a
+                                    onClick={() =>
+                                        setActiveComponent('AboutMe')
+                                    }
+                                >
                                     <motion.div
                                         className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
                                         whileHover={{ scale: 1.01 }}
@@ -117,7 +130,7 @@ export const Dropdownmenu = ({ size = 'medium', className }: Props) => {
                                             damping: 25,
                                         }}
                                     >
-                                        About me
+                                        About Me
                                     </motion.div>
                                 </motion.a>
                             </li>
