@@ -27,8 +27,14 @@ export default {
         fontFamily: {
             headers: ['Cormorant', 'Kauhan Script', 'sans-serif'],
             sans: ['SF Pro Display', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            ibm: ['IBM Plex Mono', 'sans-serif'],
         },
-        extend: {},
+        extend: {
+            backgroundImage: {
+                'custom-gradient':
+                    'linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5))',
+            },
+        },
     },
     plugins: [],
 };
