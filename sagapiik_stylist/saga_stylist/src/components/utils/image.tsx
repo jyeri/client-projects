@@ -1,6 +1,7 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../container/container';
+import { Modal } from './modal';
 
 export function Image({
     src,
@@ -8,16 +9,20 @@ export function Image({
     id,
     credits,
     muah,
+    images,
+    title,
 }: {
     src: string;
     alt: string;
     id: number;
     credits: string;
     muah: string;
+    images: { url: string; alt: string }[];
+    title: string;
 }) {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const ref = useRef(null);
 
-    // Check if id is even or odd to determine left or right position
     const positionClass =
         id % 2 === 0
             ? 'md:left-3/4 md:text-left'
@@ -29,7 +34,10 @@ export function Image({
             className="relative flex h-[calc(100vh-var(--header-height))] snap-center items-center justify-center"
         >
             <Container className="relative flex h-full max-h-[100svh] w-full items-center justify-center">
-                <div className="group relative h-96 max-h-[90vh] w-72 overflow-hidden bg-white md:h-[35rem] md:w-[24rem] lg:h-[40rem] lg:w-[28rem] xl:h-[45rem] xl:w-[32rem]">
+                <div
+                    className="group relative h-96 max-h-[90vh] w-72 cursor-pointer overflow-hidden bg-white md:h-[35rem] md:w-[24rem] lg:h-[40rem] lg:w-[28rem] xl:h-[45rem] xl:w-[32rem]"
+                    onClick={() => setIsModalOpen(true)}
+                >
                     <img
                         src={src}
                         alt={alt}
@@ -53,6 +61,12 @@ export function Image({
                     </p>
                 </div>
             </Container>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                images={images}
+                title={title}
+            />
         </section>
     );
 }

@@ -21,14 +21,16 @@ export const Factorial = () => {
                 ref={ref}
                 className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
             >
-                {firstImages.map((src, index) => (
+                {firstImages.map((image, index) => (
                     <Image
                         key={index}
-                        src={src.url}
-                        alt={src.alt}
-                        credits={src.credits}
-                        muah={src.muah}
+                        src={image.url}
+                        alt={image.alt}
+                        credits={image.credits}
+                        muah={image.muah}
                         id={index + 1}
+                        images={imageSets[index]} // Send the whole image set for modal slider
+                        title={`Image Set ${index + 1}`}
                     />
                 ))}
             </div>

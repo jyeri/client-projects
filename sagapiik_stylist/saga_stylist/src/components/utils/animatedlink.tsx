@@ -6,6 +6,7 @@ type linkProps = {
     href: string;
     onClick: () => void;
     className?: string;
+    isActive: boolean;
 };
 
 export const Animatedlink = ({
