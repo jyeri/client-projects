@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Container } from '../container/container';
 import { Dropdownmenu } from '../utils/dropdown';
 import { Animatedlink } from '../utils/animatedlink';
+import { Hoverlink } from '../utils/hoverlink';
 
 interface HeaderProps {
     setActiveComponent: (component: string) => void;
@@ -44,30 +45,30 @@ export const Header: React.FC<HeaderProps> = ({ setActiveComponent }) => {
                         onClick={() => setActiveComponent('Editorial')}
                         className="flex h-[--header-row-height] items-center"
                     >
-                        <p className="px-2 font-headers text-lg font-light tracking-widest sm:px-10">
+                        <p className="xs:px-10 px-2 font-headers text-lg font-light tracking-widest">
                             stylist
                         </p>
                     </a>
                     <div className="flex h-[--header-row-height] items-center">
-                        <nav className="flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-10">
-                            <Animatedlink
+                        <nav className="mt-0 flex space-x-2 sm:mt-2 sm:space-x-4 md:mt-4 md:space-x-8 lg:space-x-10">
+                            <Hoverlink
                                 href="#Editorial"
                                 onClick={() => setActiveComponent('Editorial')}
-                                className="text-xs uppercase md:text-base lg:text-lg"
+                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
                             >
                                 Editorial
-                            </Animatedlink>
-                            <Animatedlink
+                            </Hoverlink>
+                            <Hoverlink
                                 href="#Factorial"
                                 onClick={() => setActiveComponent('Factorial')}
-                                className="text-xs uppercase md:text-base lg:text-lg"
+                                className="text-xs font-light uppercase md:text-base lg:text-lg"
                             >
                                 Factorial
-                            </Animatedlink>
+                            </Hoverlink>
                             <Animatedlink
                                 href="#AboutMe"
                                 onClick={() => setActiveComponent('AboutMe')}
-                                className="text-xs uppercase md:text-base lg:text-lg"
+                                className="text-xs font-light uppercase md:text-base lg:text-lg"
                             >
                                 About Me
                             </Animatedlink>

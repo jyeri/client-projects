@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { Container } from '../container/container';
+import { aboutmeImage } from '../../images/index';
 
 export const Aboutme = () => {
     const containerRef = useRef(null);
@@ -10,8 +11,8 @@ export const Aboutme = () => {
             <section className="flex flex-col items-center justify-between p-10 md:flex-row">
                 <div className="relative aspect-square w-full overflow-hidden md:w-1/2">
                     <img
-                        src="/public/images/ph_aboutme/aboutme_ph.png"
-                        alt="About Me"
+                        src={aboutmeImage.url}
+                        alt={aboutmeImage.alt}
                         className="absolute left-0 top-0 h-full w-full rounded-lg object-cover"
                         style={{
                             borderRadius: '50%',
