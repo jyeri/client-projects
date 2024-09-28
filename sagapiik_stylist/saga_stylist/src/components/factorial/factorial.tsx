@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { landscape, portrait, square } from '../../../public/images/index';
+import { landscape, portrait, square } from '../../images/index';
 import { Image } from '../utils/image';
 
 const imageSets = [landscape, portrait, square];
