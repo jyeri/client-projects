@@ -36,10 +36,10 @@ export function Image({
                         className="absolute left-0 top-0 h-full w-full object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 h-1/6 bg-gradient-to-t from-black via-black/50 p-2 text-center text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                        <p className="font-ibm font-light text-sm md:text-xl lg:text-2xl xl:text-3xl">
+                        <p className="font-ibm text-sm font-light md:text-xl lg:text-2xl xl:text-3xl">
                             📸Credits: {credits}
                         </p>
-                        <p className="font-ibm font-light text-sm md:text-xl lg:text-2xl xl:text-3xl">
+                        <p className="font-ibm text-sm font-light md:text-xl lg:text-2xl xl:text-3xl">
                             💄MUAH: {muah}
                         </p>
                     </div>
