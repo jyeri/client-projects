@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../container/container';
-import { Modal } from './modal';
+import { Alt_modal } from './alt_modal';
 
 export function Image({
     src,
@@ -61,7 +61,7 @@ export function Image({
                     </p>
                 </div>
             </Container>
-            <Modal
+            <Alt_modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 images={images}
