@@ -28,11 +28,8 @@ export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'ArrowRight') {
-                nextImage();
-            } else if (e.key === 'ArrowLeft') {
-                prevImage();
-            }
+            if (e.key === 'ArrowRight') nextImage();
+            else if (e.key === 'ArrowLeft') prevImage();
         };
         window.addEventListener('keydown', handleKeyDown);
 
@@ -75,13 +72,11 @@ export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                     exit={{ opacity: 0 }}
                     onClick={onClose}
                 >
-                    {/* Modal background */}
                     <div
                         className="absolute inset-0 bg-black opacity-50"
                         onClick={onClose}
                     />
 
-                    {/* Modal content */}
                     <motion.div
                         className="relative z-10 flex h-[80svh] w-[80svw] max-w-5xl flex-col items-center rounded-lg bg-white p-5"
                         onClick={(e) => e.stopPropagation()}
@@ -89,31 +84,18 @@ export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                         animate={{ y: 0 }}
                         exit={{ y: 50 }}
                     >
-                        {/* Title section */}
                         <div className="mb-10 text-center">
                             <h2 className="font-headers text-xl uppercase md:text-2xl lg:text-3xl">
                                 {title}
                             </h2>
                             <p className="mt-2 font-headers text-xs md:text-sm lg:text-base">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Pellentesque vehicula, risus
-                                eget imperdiet ullamcorper, lacus augue tempor
-                                nisl, in malesuada risus libero ac neque. Lorem
-                                ipsum dolor sit amet consectetur, adipisicing
-                                elit. Itaque illo repellat ducimus pariatur
-                                nulla, laboriosam non id. Saepe, mollitia aut
-                                blanditiis incidunt tenetur dignissimos qui.
-                                Fugiat perspiciatis eaque saepe deleniti! Lorem,
-                                ipsum dolor sit amet consectetur adipisicing
-                                elit. Doloremque a optio voluptates quaerat.
-                                Necessitatibus asperiores, repellat eum est
-                                nisi, recusandae, veritatis magni tempora quidem
-                                at doloremque assumenda. Consequuntur, nobis
-                                ipsam.
+                                This is placeholder text for the modal. Lorem
+                                ipsum dolor sit amet, consectetur adipiscing
+                                elit. Pellentesque vehicula risus eget
+                                imperdiet.
                             </p>
                         </div>
 
-                        {/* Image slideshow */}
                         <div className="relative flex h-3/4 w-full items-center justify-center overflow-hidden">
                             <AnimatePresence initial={false} custom={direction}>
                                 <motion.img
@@ -129,7 +111,6 @@ export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                 />
                             </AnimatePresence>
 
-                            {/* Previous button */}
                             <motion.button
                                 onClick={prevImage}
                                 className="absolute left-2 top-1/2 -translate-y-1/2 transform p-2 text-3xl text-backgroundContrast shadow"
@@ -137,7 +118,6 @@ export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                 &#10094;
                             </motion.button>
 
-                            {/* Next button */}
                             <motion.button
                                 onClick={nextImage}
                                 className="absolute right-2 top-1/2 -translate-y-1/2 transform p-2 text-3xl text-backgroundContrast shadow"
@@ -146,7 +126,6 @@ export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                             </motion.button>
                         </div>
 
-                        {/* Close button */}
                         <motion.button
                             className="absolute right-6 top-2 text-2xl font-bold"
                             onClick={onClose}

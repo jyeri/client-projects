@@ -4,7 +4,6 @@ import { landscape, portrait, square } from '../../images/index';
 import { Image } from '../utils/image';
 
 const imageSets = [landscape, portrait, square];
-const firstImages = imageSets.map((set) => set[0]);
 
 export const Editorial = () => {
     const ref = useRef(null);
@@ -21,18 +20,21 @@ export const Editorial = () => {
                 ref={ref}
                 className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
             >
-                {firstImages.map((image, index) => (
-                    <Image
-                        key={index}
-                        src={image.url}
-                        alt={image.alt}
-                        credits={image.credits}
-                        muah={image.muah}
-                        id={index + 1}
-                        images={imageSets[index]} // Send the whole image set for modal slider
-                        title={`Image Set ${index + 1}`}
-                    />
-                ))}
+                {imageSets.map((imageSet, index) => {
+                    const firstImage = imageSet[0]; // Extract the first image from each set
+                    return (
+                        <Image
+                            key={index}
+                            src={firstImage.url}
+                            alt={firstImage.alt}
+                            credits={firstImage.credits}
+                            muah={firstImage.muah}
+                            id={index + 1}
+                            images={imageSet} // Pass the entire image set for the modal slider
+                            title={`Image Set ${index + 1}`}
+                        />
+                    );
+                })}
             </div>
             <motion.div
                 className="fixed bottom-5 left-0 right-0 h-2 bg-black"

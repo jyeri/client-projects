@@ -20,12 +20,11 @@ function App() {
     };
 
     return (
-        <>
+        <div>
             <Header
                 setActiveComponent={setActiveComponent}
                 activeComponent={activeComponent}
-            />{' '}
-            {/* Pass activeComponent */}
+            />
             <main className="relative">
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -39,7 +38,7 @@ function App() {
                     </motion.div>
                 </AnimatePresence>
             </main>
-        </>
+        </div>
     );
 }
 

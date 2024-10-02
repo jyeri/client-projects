@@ -18,16 +18,14 @@ export const Animatedlink = ({
     return (
         <motion.a
             href={href}
-            onClick={onClick} // Trigger the onClick event
+            onClick={onClick}
             className={twMerge(
-                'relative block gap-2 overflow-hidden whitespace-nowrap font-headers',
+                'relative block overflow-hidden whitespace-nowrap font-headers',
                 className
             )}
             initial="initial"
             whileHover="hovered"
-            style={{
-                lineHeight: '0.8',
-            }}
+            style={{ lineHeight: '0.8' }}
         >
             <div>
                 {typeof children === 'string' &&

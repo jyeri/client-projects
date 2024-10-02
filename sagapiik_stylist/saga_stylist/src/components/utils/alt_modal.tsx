@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Container } from '../container/container';
 
 type ModalProps = {
@@ -34,13 +34,10 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                     exit={{ opacity: 0 }}
                     onClick={onClose}
                 >
-                    {/* Modal background */}
                     <div
                         className="absolute inset-0 bg-black opacity-50"
                         onClick={onClose}
                     />
-
-                    {/* Modal content */}
                     <motion.div
                         className="relative z-10 flex flex-col overflow-hidden rounded-lg bg-white shadow-lg lg:flex-row"
                         onClick={(e) => e.stopPropagation()}
@@ -50,9 +47,8 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                         transition={{ duration: 0.5, ease: 'easeInOut' }}
                     >
                         <Container className="flex max-h-[75vh] max-w-[75vw] flex-col bg-background px-5 py-10 lg:flex-row">
-                            {/* Left section: Title and text */}
                             <div className="flex w-full flex-col justify-between lg:w-1/2">
-                                <h1 className="font-headers text-2xl font-medium md:text-3xl lg:text-4xl">
+                                <h1 className="text-center font-ibm text-2xl font-semibold md:text-3xl lg:text-4xl">
                                     {title}
                                 </h1>
                                 <div className="mt-5 space-y-4">
@@ -66,7 +62,7 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                             }`}
                                         >
                                             <h1
-                                                className={`text-xl font-light md:text-2xl ${
+                                                className={`text-xl font-semibold md:text-2xl ${
                                                     index === activeIndex
                                                         ? 'text-black'
                                                         : 'text-backgroundContrast'
@@ -112,8 +108,6 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                     ))}
                                 </div>
                             </div>
-
-                            {/* Right section: Image */}
                             <div className="w-full lg:w-1/2">
                                 <AnimatePresence mode="wait">
                                     <motion.div
@@ -129,13 +123,11 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                         <img
                                             src={images[activeIndex].url}
                                             alt={images[activeIndex].alt}
-                                            className="h-auto w-full rounded-sm object-cover"
+                                            className="h-fit-content w-auto rounded-sm"
                                         />
                                     </motion.div>
                                 </AnimatePresence>
                             </div>
-
-                            {/* Close button */}
                             <motion.button
                                 className="absolute right-6 top-2 text-2xl font-bold"
                                 onClick={onClose}

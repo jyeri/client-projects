@@ -7,7 +7,7 @@ import { Dropdownmenu } from '../utils/dropdown';
 
 interface HeaderProps {
     setActiveComponent: (component: string) => void;
-    activeComponent: string; // Pass activeComponent to determine the current active link
+    activeComponent: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -19,9 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsScrolled(!entry.isIntersecting);
-            },
+            ([entry]) => setIsScrolled(!entry.isIntersecting),
             { threshold: 0 }
         );
 
@@ -30,6 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
             observer.observe(currentHeaderRef);
         }
 
+        // Cleanup function
         return () => {
             if (currentHeaderRef) {
                 observer.unobserve(currentHeaderRef);
@@ -53,34 +52,32 @@ export const Header: React.FC<HeaderProps> = ({
                             stylist
                         </p>
                     </a>
-                    <div className="flex h-[--header-row-height] items-center">
-                        <nav className="mt-1 flex space-x-2 sm:mt-3 sm:space-x-4 md:mt-4 md:space-x-8 lg:space-x-10">
-                            <Hoverlink
-                                href="#Editorial"
-                                onClick={() => setActiveComponent('Editorial')}
-                                isActive={activeComponent === 'Editorial'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
-                            >
-                                Editorial
-                            </Hoverlink>
-                            <Hoverlink
-                                href="#Factorial"
-                                onClick={() => setActiveComponent('Factorial')}
-                                isActive={activeComponent === 'Factorial'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
-                            >
-                                Factorial
-                            </Hoverlink>
-                            <Animatedlink
-                                href="#AboutMe"
-                                onClick={() => setActiveComponent('AboutMe')}
-                                isActive={activeComponent === 'AboutMe'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
-                            >
-                                About Me
-                            </Animatedlink>
-                        </nav>
-                    </div>
+                    <nav className="flex items-center space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-10">
+                        <Hoverlink
+                            href="#Editorial"
+                            onClick={() => setActiveComponent('Editorial')}
+                            isActive={activeComponent === 'Editorial'}
+                            className="text-xs sm:text-base lg:text-lg"
+                        >
+                            Editorial
+                        </Hoverlink>
+                        <Hoverlink
+                            href="#Factorial"
+                            onClick={() => setActiveComponent('Factorial')}
+                            isActive={activeComponent === 'Factorial'}
+                            className="text-xs sm:text-base lg:text-lg"
+                        >
+                            Factorial
+                        </Hoverlink>
+                        <Animatedlink
+                            href="#AboutMe"
+                            onClick={() => setActiveComponent('AboutMe')}
+                            isActive={activeComponent === 'AboutMe'}
+                            className="text-xs sm:text-base lg:text-lg"
+                        >
+                            About Me
+                        </Animatedlink>
+                    </nav>
                 </Container>
             </header>
             <div className="sticky top-0 z-20 border-b border-backgroundContrast bg-background text-black">

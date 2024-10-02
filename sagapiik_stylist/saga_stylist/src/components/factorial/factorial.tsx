@@ -4,7 +4,7 @@ import { landscape, portrait, square } from '../../images/index';
 import { Image } from '../utils/image';
 
 const imageSets = [landscape, portrait, square];
-const firstImages = imageSets.map((set) => set[1]);
+const factorialImages = imageSets.map((set) => set[1]);
 
 export const Factorial = () => {
     const ref = useRef(null);
@@ -21,7 +21,7 @@ export const Factorial = () => {
                 ref={ref}
                 className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
             >
-                {firstImages.map((image, index) => (
+                {factorialImages.map((image, index) => (
                     <Image
                         key={index}
                         src={image.url}
@@ -30,7 +30,7 @@ export const Factorial = () => {
                         muah={image.muah}
                         id={index + 1}
                         images={imageSets[index]} // Send the whole image set for modal slider
-                        title={`Image Set ${index + 1}`}
+                        title={`Factorial Set ${index + 1}`}
                     />
                 ))}
             </div>

@@ -22,25 +22,23 @@ export const Dropdownmenu = ({
         large: 'text-base px-8 py-4',
     };
 
-    const handleCheckboxChange = () => {
-        setIsChecked(!isChecked);
-    };
+    const toggleCheckbox = () => setIsChecked(!isChecked);
 
     return (
         <div
             className={twMerge(
-                'relative right-5 grid bg-background font-medium text-white md:right-10',
+                'relative bg-background',
                 sizeClassNames[size],
                 className
             )}
         >
             <div className="menu cross menu--1 relative bg-backgroundContrast">
-                <label className="absolute h-full w-full cursor-pointer text-white">
+                <label className="absolute h-full w-full cursor-pointer">
                     <input
                         type="checkbox"
                         className="hidden"
                         checked={isChecked}
-                        onChange={handleCheckboxChange}
+                        onChange={toggleCheckbox}
                     />
                     <svg
                         viewBox="0 0 100 100"
@@ -66,74 +64,41 @@ export const Dropdownmenu = ({
                 </label>
                 <div
                     className={twMerge(
-                        'fixed left-0 top-[--header-row-height-border] w-screen transform bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
+                        'fixed left-0 top-[--header-row-height-border] w-screen bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
                         isChecked
                             ? 'scale-100 opacity-100'
                             : 'pointer-events-none scale-90 opacity-0'
                     )}
                 >
-                    <Container className="relative w-full bg-background">
+                    <Container className="bg-background">
                         <ul className="flex flex-col">
-                            <li className="cursor-pointer font-sans transition-colors duration-200 ease-in-out">
-                                <motion.a
-                                    onClick={() =>
-                                        setActiveComponent('Editorial')
-                                    }
-                                >
-                                    <motion.div
-                                        className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.9 }}
-                                        transition={{
-                                            type: 'spring',
-                                            stiffness: 400,
-                                            damping: 25,
-                                        }}
+                            {['Editorial', 'Factorial', 'AboutMe'].map(
+                                (link) => (
+                                    <li
+                                        key={link}
+                                        className="cursor-pointer transition-colors duration-200 ease-in-out"
                                     >
-                                        Editorial
-                                    </motion.div>
-                                </motion.a>
-                            </li>
-                            <li className="cursor-pointer font-sans transition-colors duration-200 ease-in-out">
-                                <motion.a
-                                    onClick={() =>
-                                        setActiveComponent('Factorial')
-                                    }
-                                >
-                                    <motion.div
-                                        className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.9 }}
-                                        transition={{
-                                            type: 'spring',
-                                            stiffness: 400,
-                                            damping: 25,
-                                        }}
-                                    >
-                                        Factorial
-                                    </motion.div>
-                                </motion.a>
-                            </li>
-                            <li className="cursor-pointer transition-colors duration-200 ease-in-out">
-                                <motion.a
-                                    onClick={() =>
-                                        setActiveComponent('AboutMe')
-                                    }
-                                >
-                                    <motion.div
-                                        className="py-1 font-sans text-base font-light uppercase md:py-2 md:text-lg lg:py-3"
-                                        whileHover={{ scale: 1.01 }}
-                                        whileTap={{ scale: 0.9 }}
-                                        transition={{
-                                            type: 'spring',
-                                            stiffness: 400,
-                                            damping: 25,
-                                        }}
-                                    >
-                                        About Me
-                                    </motion.div>
-                                </motion.a>
-                            </li>
+                                        <motion.a
+                                            onClick={() =>
+                                                setActiveComponent(link)
+                                            }
+                                        >
+                                            <motion.div
+                                                className="py-2 text-base font-light uppercase"
+                                                whileHover={{ scale: 1.01 }}
+                                                whileTap={{ scale: 0.9 }}
+                                                transition={{
+                                                    type: 'spring',
+                                                    stiffness: 400,
+                                                    damping: 25,
+                                                }}
+                                            >
+                                                {link}
+                                            </motion.div>
+                                        </motion.a>
+                                    </li>
+                                )
+                            )}
                         </ul>
                     </Container>
                 </div>
