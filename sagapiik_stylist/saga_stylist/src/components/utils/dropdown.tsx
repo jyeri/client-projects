@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
 import { Container } from '../container/container';
+import '../../styles.css';
 
 type Props = {
     setActiveComponent: (component: string) => void;
@@ -17,9 +18,9 @@ export const Dropdownmenu = ({
     const [isChecked, setIsChecked] = useState(false);
 
     const sizeClassNames = {
-        small: 'text-xs px-2 py-1',
-        medium: 'text-sm px-5 py-3',
-        large: 'text-base px-8 py-4',
+        small: 'text-xs',
+        medium: 'text-sm',
+        large: 'text-base',
     };
 
     const toggleCheckbox = () => setIsChecked(!isChecked);
@@ -27,13 +28,14 @@ export const Dropdownmenu = ({
     return (
         <div
             className={twMerge(
-                'relative bg-background',
+                'relative z-[1000]',
                 sizeClassNames[size],
                 className
             )}
         >
-            <div className="menu cross menu--1 relative bg-backgroundContrast">
-                <label className="absolute h-full w-full cursor-pointer">
+            {/* SVG Button */}
+            <div className="menu cross menu--1 relative z-[1100] h-12 w-12 m-0 p-0">
+                <label className="absolute h-full w-full cursor-pointer flex items-center justify-center text-white">
                     <input
                         type="checkbox"
                         className="hidden"
@@ -49,22 +51,29 @@ export const Dropdownmenu = ({
                             cx="50"
                             cy="50"
                             r="30"
-                            className="fill-[#fff3] opacity-0 transition-opacity duration-300 hover:opacity-100"
+                            className="opacity-0 hover:opacity-25"
                         />
                         <path
-                            className="line--1"
+                            className="line--1 stroke-black"
                             d="M0 40h62c13 0 6 28-4 18L35 35"
+                            strokeWidth="4"
                         />
-                        <path className="line--2" d="M0 50h70" />
                         <path
-                            className="line--3"
+                            className="line--2 stroke-black"
+                            d="M0 50h70"
+                            strokeWidth="4"
+                        />
+                        <path
+                            className="line--3 stroke-black"
                             d="M0 60h62c13 0 6-28-4-18L35 65"
+                            strokeWidth="4"
                         />
                     </svg>
                 </label>
+
                 <div
                     className={twMerge(
-                        'fixed left-0 top-[--header-row-height-border] w-screen bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
+                        'fixed left-0 top-[--header-row-height-border] z-[1100] w-screen bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
                         isChecked
                             ? 'scale-100 opacity-100'
                             : 'pointer-events-none scale-90 opacity-0'
