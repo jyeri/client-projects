@@ -28,6 +28,7 @@ export default {
             headers: ['Cormorant', 'Kauhan Script', 'sans-serif'],
             sans: ['SF Pro Display', 'Helvetica Neue', 'Arial', 'sans-serif'],
             ibm: ['IBM Plex Mono', 'sans-serif'],
+            Saira: ['Saira Condensed', 'sans-serif'],
         },
         extend: {
             backgroundImage: {

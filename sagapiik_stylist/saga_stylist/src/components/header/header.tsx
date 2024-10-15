@@ -20,7 +20,6 @@ export const Header: React.FC<HeaderProps> = ({
     useEffect(() => {
         const handleScroll = () => {
             const scrolled = window.scrollY > 50;
-            console.log('Scrolled:', scrolled); // Add this to debug
             setIsScrolled(scrolled);
         };
 
@@ -48,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({
                         </p>
                     </a>
                     <div className="flex h-[--header-row-height] items-center">
-                        <nav className="mt-1 flex space-x-2 sm:mt-3 sm:space-x-4 md:mt-4 md:space-x-8 lg:space-x-10">
+                        <nav className="mt-1 flex space-x-2 sm:mt-2 sm:space-x-4 md:mt-3 md:space-x-8 lg:space-x-10">
                             <Hoverlink
                                 href="#Editorial"
                                 onClick={() => setActiveComponent('Editorial')}
@@ -87,8 +86,6 @@ export const Header: React.FC<HeaderProps> = ({
                     </a>
                     {isScrolled && (
                         <>
-                            {console.log('Dropdown visible')}{' '}
-                            {/* Add this for debugging */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}

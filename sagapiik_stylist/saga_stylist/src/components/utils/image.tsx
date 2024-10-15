@@ -43,11 +43,11 @@ export function Image({
                         alt={alt}
                         className="absolute left-0 top-0 h-full w-full object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 h-1/6 bg-gradient-to-t from-black via-black/50 p-2 text-center text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-                        <p className="font-ibm text-sm font-light md:text-xl lg:text-2xl xl:text-3xl">
+                    <div className="h-1/8 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/50 p-2 text-center text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                        <p className="font-Saira text-xs font-light tracking-widest md:text-base lg:text-xl xl:text-2xl">
                             📸Credits: {credits}
                         </p>
-                        <p className="font-ibm text-sm font-light md:text-xl lg:text-2xl xl:text-3xl">
+                        <p className="font-Saira text-xs font-light tracking-widest md:text-base lg:text-xl xl:text-2xl">
                             💄MUAH: {muah}
                         </p>
                     </div>
@@ -56,7 +56,7 @@ export function Image({
                     className={`absolute top-[16%] flex flex-col text-center md:top-[50%] ${positionClass}`}
                 >
                     <h2 className="text-xl font-bold text-backgroundContrast md:text-3xl lg:text-4xl xl:text-5xl">{`#00${id}`}</h2>
-                    <p className="bg-white font-ibm text-xs text-black md:text-sm lg:text-xl xl:text-2xl">
+                    <p className="bg-white font-Saira text-xs tracking-wide text-black md:text-sm lg:text-xl xl:text-2xl">
                         3 words about the image
                     </p>
                 </div>

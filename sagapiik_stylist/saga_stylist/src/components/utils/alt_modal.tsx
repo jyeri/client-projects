@@ -48,7 +48,7 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                     >
                         <Container className="flex max-h-[75vh] max-w-[75vw] flex-col bg-background px-5 py-10 lg:flex-row">
                             <div className="flex w-full flex-col justify-between lg:w-1/2">
-                                <h1 className="text-center font-ibm text-2xl font-semibold md:text-3xl lg:text-4xl">
+                                <h1 className="text-center font-Saira text-2xl font-bold tracking-wider md:text-3xl lg:text-4xl">
                                     {title}
                                 </h1>
                                 <div className="mt-5 space-y-4">
@@ -62,7 +62,7 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                             }`}
                                         >
                                             <h1
-                                                className={`text-xl font-semibold md:text-2xl ${
+                                                className={`font-Saira text-xl font-bold tracking-widest md:text-2xl ${
                                                     index === activeIndex
                                                         ? 'text-black'
                                                         : 'text-backgroundContrast'
@@ -94,7 +94,7 @@ export const Alt_modal = ({ isOpen, onClose, images, title }: ModalProps) => {
                                                 }}
                                                 className="overflow-hidden"
                                             >
-                                                <p className="text-sm font-light md:text-base lg:text-lg">
+                                                <p className="font-Saira text-sm font-light md:text-base lg:text-lg">
                                                     Lorem ipsum dolor sit amet,
                                                     consectetur adipiscing elit.
                                                     Explicabo est in,
