@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import { Container } from '../container/container';
-import { Alt_modal } from './alt_modal';
 import { Modal } from './modal'; // secondary option for modal design
 
 export function Image({
@@ -55,13 +54,13 @@ export function Image({
                 <div
                     className={`absolute top-[16%] flex flex-col text-center md:top-[50%] ${positionClass}`}
                 >
-                    <h2 className="text-xl font-bold text-backgroundContrast md:text-3xl lg:text-4xl xl:text-5xl">{`#00${id}`}</h2>
-                    <p className="bg-white font-Saira text-xs tracking-wide text-black md:text-sm lg:text-xl xl:text-2xl">
+                    <h2 className="text-xl font-bold font-headers text-backgroundContrast md:text-3xl lg:text-4xl xl:text-5xl">{`#00${id}`}</h2>
+                    <p className="bg-white font-headers text-xs tracking-wide text-black md:text-sm lg:text-xl xl:text-2xl">
                         3 words about the image
                     </p>
                 </div>
             </Container>
-            <Alt_modal
+            <Modal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 images={images}

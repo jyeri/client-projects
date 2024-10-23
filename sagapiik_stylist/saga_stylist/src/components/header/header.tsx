@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../container/container';
 import { Hoverlink } from '../utils/hoverlink';
-import { Animatedlink } from '../utils/animatedlink';
 import { Dropdownmenu } from '../utils/dropdown';
 
 interface HeaderProps {
@@ -54,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 isActive={activeComponent === 'Editorial'}
                                 className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
                             >
-                                Editorial
+                                editorial
                             </Hoverlink>
                             <Hoverlink
                                 href="#Factorial"
@@ -62,16 +61,16 @@ export const Header: React.FC<HeaderProps> = ({
                                 isActive={activeComponent === 'Factorial'}
                                 className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
                             >
-                                Factorial
+                                commercial
                             </Hoverlink>
-                            <Animatedlink
+                            <Hoverlink
                                 href="#AboutMe"
                                 onClick={() => setActiveComponent('AboutMe')}
                                 isActive={activeComponent === 'AboutMe'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                                className="font-headers text-lg text-xs font-light tracking-tight sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
                             >
-                                About Me
-                            </Animatedlink>
+                                about me
+                            </Hoverlink>
                         </nav>
                     </div>
                 </Container>

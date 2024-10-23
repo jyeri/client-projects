@@ -25,7 +25,7 @@ export default {
         keyframes: {},
         animation: {},
         fontFamily: {
-            headers: ['Cormorant', 'Kauhan Script', 'sans-serif'],
+            headers: ['Cormorant Garamond', 'sans-serif'],
             sans: ['SF Pro Display', 'Helvetica Neue', 'Arial', 'sans-serif'],
             ibm: ['IBM Plex Mono', 'sans-serif'],
             Saira: ['Saira Condensed', 'sans-serif'],
