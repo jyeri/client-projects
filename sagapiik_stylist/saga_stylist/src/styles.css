@@ -54,6 +54,10 @@
     background: transparent;
 }
 
+.icon-black path {
+    fill: black !important;
+}
+
 input {
     display: none;
 }

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Container } from '../container/container';
 import { Hoverlink } from '../utils/hoverlink';
 import { Dropdownmenu } from '../utils/dropdown';
+import { twMerge } from 'tailwind-merge';
 
 interface HeaderProps {
     setActiveComponent: (component: string) => void;
@@ -33,51 +34,12 @@ export const Header: React.FC<HeaderProps> = ({
         <>
             <header
                 ref={headerRef}
-                className="relative z-20 bg-background text-black"
+                className={twMerge(
+                    'sticky top-0 z-50 bg-background text-black',
+                    isScrolled ? 'border-b border-backgroundContrast' : ''
+                )}
             >
-                <Container className="flex min-h-[--header-row-height] items-center justify-between">
-                    <a
-                        href="#"
-                        onClick={() => setActiveComponent('Editorial')}
-                        className="flex h-[--header-row-height] items-center"
-                    >
-                        <p className="xs:px-10 px-2 font-headers text-lg font-light tracking-widest">
-                            stylist
-                        </p>
-                    </a>
-                    <div className="flex h-[--header-row-height] items-center">
-                        <nav className="mt-1 flex space-x-2 sm:mt-2 sm:space-x-4 md:mt-3 md:space-x-8 lg:space-x-10">
-                            <Hoverlink
-                                href="#Editorial"
-                                onClick={() => setActiveComponent('Editorial')}
-                                isActive={activeComponent === 'Editorial'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
-                            >
-                                editorial
-                            </Hoverlink>
-                            <Hoverlink
-                                href="#Factorial"
-                                onClick={() => setActiveComponent('Factorial')}
-                                isActive={activeComponent === 'Factorial'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
-                            >
-                                commercial
-                            </Hoverlink>
-                            <Hoverlink
-                                href="#AboutMe"
-                                onClick={() => setActiveComponent('AboutMe')}
-                                isActive={activeComponent === 'AboutMe'}
-                                className="font-headers text-lg text-xs font-light tracking-tight sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
-                            >
-                                about me
-                            </Hoverlink>
-                        </nav>
-                    </div>
-                </Container>
-            </header>
-
-            <div className="sticky top-0 z-50 border-b border-backgroundContrast bg-background text-black">
-                <Container className="flex min-h-[--header-row-height] items-center justify-between">
+                <Container className="flex min-h-[--header-row-height] items-center justify-center">
                     <a href="#" onClick={() => setActiveComponent('Editorial')}>
                         <p className="font-headers text-2xl font-semibold tracking-widest">
                             SAGA PIIK
@@ -89,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
-                                className="visible z-50"
+                                className="md:right-30 xl:right-50 visible absolute right-0 top-0 z-50 sm:right-20 lg:right-40"
                             >
                                 <Dropdownmenu
                                     setActiveComponent={setActiveComponent}
@@ -97,6 +59,44 @@ export const Header: React.FC<HeaderProps> = ({
                             </motion.div>
                         </>
                     )}
+                </Container>
+            </header>
+
+            <div className="relative z-20 border-b border-backgroundContrast bg-background text-black">
+                <Container className="flex min-h-[--header-row-height] items-center justify-center">
+                    <a
+                        href="#"
+                        onClick={() => setActiveComponent('Editorial')}
+                        className="flex h-[--header-row-height] items-center"
+                    ></a>
+                    <div className="flex h-[--header-row-height] items-center">
+                        <nav className="mt-1 flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-10">
+                            <Hoverlink
+                                href="#Editorial"
+                                onClick={() => setActiveComponent('Editorial')}
+                                isActive={activeComponent === 'Editorial'}
+                                className="font-headers text-lg text-xs font-light tracking-normal sm:text-sm sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                            >
+                                editorial
+                            </Hoverlink>
+                            <Hoverlink
+                                href="#Factorial"
+                                onClick={() => setActiveComponent('Factorial')}
+                                isActive={activeComponent === 'Factorial'}
+                                className="font-headers text-lg text-xs font-light tracking-normal sm:text-sm sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                            >
+                                commercial
+                            </Hoverlink>
+                            <Hoverlink
+                                href="#AboutMe"
+                                onClick={() => setActiveComponent('AboutMe')}
+                                isActive={activeComponent === 'AboutMe'}
+                                className="font-headers text-lg text-xs font-light tracking-tight sm:text-sm sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                            >
+                                about me
+                            </Hoverlink>
+                        </nav>
+                    </div>
                 </Container>
             </div>
         </>

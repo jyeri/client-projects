@@ -4,6 +4,7 @@ import { Editorial } from './components/editorial/editorial';
 import { Factorial } from './components/factorial/factorial';
 import { Aboutme } from './components/aboutme/aboutme';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Footer } from './components/footer/footer';
 
 function App() {
     const [activeComponent, setActiveComponent] = useState('Editorial');
@@ -38,6 +39,7 @@ function App() {
                     </motion.div>
                 </AnimatePresence>
             </main>
+            <Footer />
         </div>
     );
 }

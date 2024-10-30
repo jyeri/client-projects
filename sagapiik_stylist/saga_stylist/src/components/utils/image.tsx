@@ -54,7 +54,7 @@ export function Image({
                 <div
                     className={`absolute top-[16%] flex flex-col text-center md:top-[50%] ${positionClass}`}
                 >
-                    <h2 className="text-xl font-bold font-headers text-backgroundContrast md:text-3xl lg:text-4xl xl:text-5xl">{`#00${id}`}</h2>
+                    <h2 className="font-headers text-xl font-bold text-backgroundContrast md:text-3xl lg:text-4xl xl:text-5xl">{`#00${id}`}</h2>
                     <p className="bg-white font-headers text-xs tracking-wide text-black md:text-sm lg:text-xl xl:text-2xl">
                         3 words about the image
                     </p>
