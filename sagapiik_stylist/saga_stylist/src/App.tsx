@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Header } from './components/header/header';
 import { Editorial } from './components/editorial/editorial';
-import { Factorial } from './components/factorial/factorial';
+import { Factorial } from './components/commercial/commercial';
 import { Aboutme } from './components/aboutme/aboutme';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Footer } from './components/footer/footer';

@@ -5,8 +5,8 @@ import { faTiktok, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export const Footer = () => {
     return (
-        <footer className="fixed bottom-5">
-            <Container className="flex min-h-[--header-row-height] items-center justify-center">
+        <footer className="fixed bottom-5 w-[100%]">
+            <Container className="flex min-h-[--header-row-height] p-0">
                 <div className="flex h-[--header-row-height] flex-row items-start">
                     <a
                         className="ml-5 text-black"

@@ -58,6 +58,10 @@
     fill: black !important;
 }
 
+.icon-white path {
+    fill: white !important;
+}
+
 input {
     display: none;
 }

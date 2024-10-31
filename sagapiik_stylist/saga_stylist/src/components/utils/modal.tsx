@@ -1,143 +1,190 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
     images: { url: string; alt: string }[];
-    title: string;
+    metadata: {
+        description?: string;
+        subdescription?: string;
+        credits?: string;
+    };
 };
 
-export const Modal = ({ isOpen, onClose, images, title }: ModalProps) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [direction, setDirection] = useState(1);
+export const Modal = ({ isOpen, onClose, images, metadata }: ModalProps) => {
+    const [previewIndex, setPreviewIndex] = useState<number | null>(null);
 
-    const nextImage = useCallback(() => {
-        setDirection(1);
-        setCurrentIndex((prevIndex) =>
-            prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
-    }, [images.length]);
+    const isVideo = (url: string) => url.endsWith('.mp4');
 
-    const prevImage = useCallback(() => {
-        setDirection(-1);
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    const handleNext = () => {
+        setPreviewIndex((prevIndex) => (prevIndex! + 1) % images.length);
+    };
+
+    const handlePrev = () => {
+        setPreviewIndex((prevIndex) =>
+            prevIndex! - 1 < 0 ? images.length - 1 : prevIndex! - 1
         );
-    }, [images.length]);
+    };
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'ArrowRight') nextImage();
-            else if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') onClose();
+            if (e.key === 'ArrowRight' && previewIndex !== null) handleNext();
+            if (e.key === 'ArrowLeft' && previewIndex !== null) handlePrev();
         };
         window.addEventListener('keydown', handleKeyDown);
-
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, [nextImage, prevImage]);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onClose, previewIndex]);
 
     if (!isOpen) return null;
-
-    const currentImage = images[currentIndex];
-
-    const imageVariants = {
-        initial: (direction: number) => ({
-            x: direction > 0 ? 300 : -300,
-            opacity: 0,
-            scale: 0.8,
-        }),
-        animate: {
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-        },
-        exit: (direction: number) => ({
-            x: direction < 0 ? 300 : -300,
-            opacity: 0,
-            scale: 0.8,
-            transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-        }),
-    };
 
     return (
         <AnimatePresence>
             {isOpen && (
-                <motion.div
-                    className="fixed inset-0 z-50 flex flex-col items-center justify-center backdrop-blur-sm"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={onClose}
-                >
-                    <div
-                        className="absolute inset-0 bg-black opacity-50"
-                        onClick={onClose}
-                    />
-
+                <>
+                    {/* Background Overlay */}
                     <motion.div
-                        className="relative z-10 flex h-[80svh] w-[80svw] max-w-5xl flex-col items-center rounded-lg bg-white p-5"
-                        onClick={(e) => e.stopPropagation()}
-                        initial={{ y: -50 }}
-                        animate={{ y: 0 }}
-                        exit={{ y: 50 }}
+                        className="fixed inset-0 z-40 flex items-center justify-center backdrop-blur-sm"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={onClose}
                     >
-                        <div className="mb-10 text-center">
-                            <h2 className="font-headers text-xl uppercase md:text-2xl lg:text-3xl">
-                                {title}
-                            </h2>
-                            <p className="mt-2 font-headers text-xs md:text-sm lg:text-base">
-                                This is placeholder text for the modal. Lorem
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit. Pellentesque vehicula risus eget
-                                imperdiet.
-                            </p>
-                        </div>
+                        <div
+                            className="absolute inset-0 bg-black opacity-50"
+                            onClick={onClose}
+                        />
 
-                        <div className="relative flex h-3/4 w-full items-center justify-center overflow-hidden">
-                            <AnimatePresence initial={false} custom={direction}>
-                                <motion.img
-                                    key={currentImage.url}
-                                    src={currentImage.url}
-                                    alt={currentImage.alt}
-                                    custom={direction}
-                                    variants={imageVariants}
-                                    initial="initial"
-                                    animate="animate"
-                                    exit="exit"
-                                    className="absolute h-full w-auto object-cover"
+                        {/* Modal Content */}
+                        <motion.div
+                            className="relative z-10 h-[90vh] w-[90vw] max-w-5xl overflow-y-auto rounded-lg bg-white p-8 shadow-lg"
+                            onClick={(e) => e.stopPropagation()}
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                        >
+                            {/* Close Button */}
+                            <button
+                                className="text-gray-700 hover:text-gray-900 absolute right-6 top-4 text-2xl font-bold"
+                                onClick={onClose}
+                            >
+                                &times;
+                            </button>
+
+                            {/* Title and Metadata */}
+                            <div className="mb-6 text-center">
+                                <h2 className="font-headers text-2xl uppercase md:text-3xl lg:text-4xl">
+                                    {metadata.description}
+                                </h2>
+                                <div className="text-gray-700 mt-1 font-headers text-sm md:text-base lg:text-lg">
+                                    {metadata.subdescription && (
+                                        <p>{metadata.subdescription}</p>
+                                    )}
+                                    {metadata.credits && (
+                                        <p className="mt-5 italic">
+                                            {metadata.credits}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Media List */}
+                            <div className="space-y-8">
+                                {images.map((media, index) => (
+                                    <div
+                                        key={index}
+                                        className="relative cursor-pointer"
+                                        onClick={() => setPreviewIndex(index)}
+                                    >
+                                        {isVideo(media.url) ? (
+                                            <div className="relative">
+                                                <video
+                                                    src={media.url}
+                                                    className="h-auto max-h-[80vh] w-full object-contain"
+                                                    muted
+                                                    loop
+                                                />
+                                                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                                                    <FontAwesomeIcon
+                                                        icon={faCirclePlay}
+                                                        className="text-white"
+                                                        size="3x"
+                                                    />
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <img
+                                                src={media.url}
+                                                alt={media.alt}
+                                                className="h-auto max-h-[80vh] w-full object-contain"
+                                            />
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Full-Screen Preview */}
+                    {previewIndex !== null && (
+                        <motion.div
+                            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setPreviewIndex(null)}
+                        >
+                            {isVideo(images[previewIndex].url) ? (
+                                <video
+                                    src={images[previewIndex].url}
+                                    controls
+                                    autoPlay
+                                    className="max-h-[90vh] max-w-[90vw] object-contain"
+                                    onClick={(e) => e.stopPropagation()}
                                 />
-                            </AnimatePresence>
+                            ) : (
+                                <img
+                                    src={images[previewIndex].url}
+                                    alt={images[previewIndex].alt}
+                                    className="max-h-[90vh] max-w-[90vw] object-contain"
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            )}
 
-                            <motion.button
-                                onClick={prevImage}
-                                className="absolute left-2 top-1/2 -translate-y-1/2 transform p-2 text-3xl text-backgroundContrast shadow"
+                            {/* Navigation Buttons */}
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handlePrev();
+                                }}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-3xl text-white"
                             >
                                 &#10094;
-                            </motion.button>
-
-                            <motion.button
-                                onClick={nextImage}
-                                className="absolute right-2 top-1/2 -translate-y-1/2 transform p-2 text-3xl text-backgroundContrast shadow"
+                            </button>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleNext();
+                                }}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-3xl text-white"
                             >
                                 &#10095;
-                            </motion.button>
-                        </div>
-
-                        <motion.button
-                            className="absolute right-6 top-2 text-2xl font-bold"
-                            onClick={onClose}
-                            whileHover={{
-                                scale: 1.5,
-                                transition: { duration: 0.3 },
-                            }}
-                        >
-                            &times;
-                        </motion.button>
-                    </motion.div>
-                </motion.div>
+                            </button>
+                            <button
+                                className="hover:text-gray-400 absolute right-6 top-4 text-2xl font-bold text-white"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setPreviewIndex(null);
+                                }}
+                            >
+                                &times;
+                            </button>
+                        </motion.div>
+                    )}
+                </>
             )}
         </AnimatePresence>
     );
