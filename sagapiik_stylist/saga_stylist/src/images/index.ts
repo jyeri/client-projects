@@ -10,7 +10,7 @@ import square_ph1 from './ph_square/square_ph1.jpg';
 import square_ph2 from './ph_square/square_ph2.jpg';
 import square_ph3 from './ph_square/square_ph3.jpg';
 
-import aboutme_ph from './ph_aboutme/aboutme_ph.png';
+import aboutme_ph from './Saga_aboutme.jpg';
 
 import veikkaus_img1 from './Veikkaus/Veikkaus_img1.jpg';
 import veikkaus_img2 from './Veikkaus/Veikkaus_img2.jpg';
@@ -59,12 +59,10 @@ import Atria_2_video1 from './Atria_Wilhelm_17.1.2023/1. video.mp4';
 import Atria_2_video2 from './Atria_Wilhelm_17.1.2023/2. video.mp4';
 
 import Lahti_video1 from './LAHTI/lahti_asuminen_purjehdus_10s_1920x1080_webmix_online (1080p).mp4';
-import { metadata } from 'framer-motion/client';
 
 export const veikkaus_images = {
     metadata: {
         description: 'Veikkaus',
-        subdescription: 'Leo Komarov',
         credits: 'Photography by Julius Konttinen, Styling by Saga Piik',
     },
     media: [
@@ -73,12 +71,14 @@ export const veikkaus_images = {
             alt: 'Veikkaus 1',
             photography: 'Julius Konttinen',
             styling: 'Saga Piik',
+            credits: 'Model: Leo Komarov',
         },
         {
             url: veikkaus_img2,
             alt: 'Veikkaus 2',
             photography: 'Julius Konttinen',
             styling: 'Saga Piik',
+            credits: 'Model: Leo Komarov',
         },
     ],
 };
@@ -86,7 +86,6 @@ export const veikkaus_images = {
 export const olvi_selzer_images = {
     metadata: {
         description: 'Olvi, Hard Seltzer',
-        subdescription: 'Olvi, Hard Selzer',
         credits:
             'Videographic by Mikko Kuoppasalmi & Julius Konttinen, Styling & MUAH by Saga Piik',
     },
@@ -125,40 +124,28 @@ export const olvi_selzer_images = {
 export const hel_missio_images = {
     metadata: {
         description: 'Helsinki Missio',
-        subdescription: 'Vuoden aikakausilehtimainos 2021',
+        subdescription: 'Vuoden aikakauslehtimainos 2021',
         credits: 'styling by Saga Piik, TBWA Helsinki',
     },
 
     media: [
         {
-            url: Hel_missio_img1,
-            alt: 'Helsinki Missio 1',
-            styling: 'Saga Piik',
-        },
-        {
             url: Hel_missio_video1,
             alt: 'Helsinki Missio 4',
             styling: 'Saga Piik',
-        },
-        {
-            url: Hel_missio_img2,
-            alt: 'Helsinki Missio 2',
-            styling: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Hel_missio_video2,
             alt: 'Helsinki Missio 5',
             styling: 'Saga Piik',
-        },
-        {
-            url: Hel_missio_img3,
-            alt: 'Helsinki Missio 3',
-            styling: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Hel_missio_video3,
             alt: 'Helsinki Missio 6',
             styling: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -166,7 +153,6 @@ export const hel_missio_images = {
 export const alko_images = {
     metadata: {
         description: 'Alko',
-        subdescription: 'Alko, 2021',
         credits: 'styling and MUAH by Saga Piik, TBWA Helsinki',
     },
 
@@ -176,12 +162,14 @@ export const alko_images = {
             alt: 'Alko 1',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Alko_video2,
             alt: 'Alko 2',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -189,7 +177,6 @@ export const alko_images = {
 export const olvi_motoroil_images = {
     metadata: {
         description: 'Olvi, Motor Oil',
-        subdescription: 'Olvi, Motor Oil',
         credits:
             'styling and muah by Saga Piik, Videography by Mikko Kuoppasalmi, photography by Julius Konttinen',
     },
@@ -216,7 +203,6 @@ export const olvi_motoroil_images = {
 export const elo_images = {
     metadata: {
         description: 'Elo Työeläkeyhtiö',
-        subdescription: 'Elo Työeläkeyhtiö',
         credits: 'Styling and Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -225,30 +211,35 @@ export const elo_images = {
             alt: 'Elo 1',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Elo_img2,
             alt: 'Elo 2',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Elo_img3,
             alt: 'Elo 3',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Elo_img4,
             alt: 'Elo 4',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Elo_img5,
             alt: 'Elo 5',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -256,7 +247,6 @@ export const elo_images = {
 export const atria_1_images = {
     metadata: {
         description: 'Atria Wilhelm',
-        subdescription: 'Atria Wilhelm',
         credits: 'Styling and Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -265,24 +255,28 @@ export const atria_1_images = {
             alt: 'Atria 1',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Atria_1_img2,
             alt: 'Atria 2',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Atria_1_img3,
             alt: 'Atria 3',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Atria_1_video1,
             alt: 'Atria 4',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -290,7 +284,6 @@ export const atria_1_images = {
 export const rastor_images = {
     metadata: {
         description: 'Rastor-instituutti',
-        subdescription: 'Rastor-instituutti',
         credits: 'Styling and Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -299,18 +292,21 @@ export const rastor_images = {
             alt: 'Rastor 1',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Rastor_video2,
             alt: 'Rastor 2',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Rastor_video3,
             alt: 'Rastor 3',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -327,36 +323,42 @@ export const santa_maria_images = {
             alt: 'Santa Maria 1',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Santa_Maria_video1,
             alt: 'Santa Maria 4',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Santa_Maria_img2,
             alt: 'Santa Maria 2',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Santa_Maria_video2,
             alt: 'Santa Maria 5',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Santa_Maria_img3,
             alt: 'Santa Maria 3',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Santa_Maria_video3,
             alt: 'Santa Maria 6',
             styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -364,7 +366,6 @@ export const santa_maria_images = {
 export const atria_2_images = {
     metadata: {
         description: 'Atria Wilhelm',
-        subdescription: 'Atria Wilhelm',
         credits: 'Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -372,11 +373,13 @@ export const atria_2_images = {
             url: Atria_2_video1,
             alt: 'Atria 1',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
         {
             url: Atria_2_video2,
             alt: 'Atria 2',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };
@@ -384,7 +387,6 @@ export const atria_2_images = {
 export const lahti_images = {
     metadata: {
         description: 'Lahden Kaupunki',
-        subdescription: 'Lahden Kaupunki',
         credits: 'Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -392,6 +394,7 @@ export const lahti_images = {
             url: Lahti_video1,
             alt: 'Lahti 1',
             muah: 'Saga Piik',
+            credits: 'TBWA Helsinki',
         },
     ],
 };

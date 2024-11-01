@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
                 <Container className="flex min-h-[--header-row-height] items-center justify-center">
                     <a href="#" onClick={() => setActiveComponent('Editorial')}>
-                        <p className="font-headers text-2xl font-semibold tracking-widest">
+                        <p className="pb-3 pt-6 font-headers text-3.5xl font-semibold tracking-wide3xl">
                             SAGA PIIK
                         </p>
                     </a>
@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
-                                className="md:right-30 xl:right-50 visible absolute right-0 top-0 z-50 sm:right-20 lg:right-40"
+                                className="md:right-30 xl:right-50 visible absolute right-0 top-0 z-50 pt-6 sm:right-20 lg:right-40"
                             >
                                 <Dropdownmenu
                                     setActiveComponent={setActiveComponent}
@@ -70,12 +70,12 @@ export const Header: React.FC<HeaderProps> = ({
                         className="flex h-[--header-row-height] items-center"
                     ></a>
                     <div className="flex h-[--header-row-height] items-center">
-                        <nav className="mt-1 flex space-x-2 sm:space-x-4 md:space-x-8 lg:space-x-10">
+                        <nav className="flex space-x-2 sm:space-x-4 md:space-x-5 lg:space-x-10">
                             <Hoverlink
                                 href="#Editorial"
                                 onClick={() => setActiveComponent('Editorial')}
                                 isActive={activeComponent === 'Editorial'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:text-sm sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                                className="tracking-normal font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
                             >
                                 editorial
                             </Hoverlink>
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 href="#Factorial"
                                 onClick={() => setActiveComponent('Factorial')}
                                 isActive={activeComponent === 'Factorial'}
-                                className="font-headers text-lg text-xs font-light tracking-normal sm:text-sm sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                                className="tracking-normal font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
                             >
                                 commercial
                             </Hoverlink>
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
                                 href="#AboutMe"
                                 onClick={() => setActiveComponent('AboutMe')}
                                 isActive={activeComponent === 'AboutMe'}
-                                className="font-headers text-lg text-xs font-light tracking-tight sm:text-sm sm:tracking-wide md:text-base md:tracking-widest lg:text-lg"
+                                className="tracking-tight font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
                             >
                                 about me
                             </Hoverlink>

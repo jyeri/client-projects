@@ -76,7 +76,7 @@ export const Modal = ({ isOpen, onClose, images, metadata }: ModalProps) => {
 
                             {/* Title and Metadata */}
                             <div className="mb-6 text-center">
-                                <h2 className="font-headers text-2xl uppercase md:text-3xl lg:text-4xl">
+                                <h2 className="font-headers text-2xl uppercase tracking-wider md:text-2xl lg:text-3xl">
                                     {metadata.description}
                                 </h2>
                                 <div className="text-gray-700 mt-1 font-headers text-sm md:text-base lg:text-lg">

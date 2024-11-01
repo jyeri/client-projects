@@ -19,8 +19,17 @@ export default {
             xl: '1.3125rem', //21px
             '2xl': '1.5rem', //24px
             '3xl': '1.75rem', //28px
+            '3.5xl': ['2rem'], //32px
             '4xl': ['2.5rem', '1.1'], //40px
             '5xl': ['4.5rem', '1.05'], //72px
+        },
+        letterSpacing: {
+            wide: '0.1em',
+            wider: '0.2em',
+            widest: '0.3em',
+            wide1xl: '0.35em',
+            wide2xl: '0.5em',
+            wide3xl: '0.75em',
         },
         keyframes: {},
         animation: {},
