@@ -48,7 +48,9 @@ export function Image({
 
             // Set orientation based on video metadata
             videoElement.onloadedmetadata = () => {
-                setIsVideoLandscape(videoElement.videoWidth > videoElement.videoHeight);
+                setIsVideoLandscape(
+                    videoElement.videoWidth > videoElement.videoHeight
+                );
             };
         }
     }, [src, isVideo]);
@@ -74,7 +76,13 @@ export function Image({
             <Container className="relative flex h-full max-h-[100svh] w-full flex-col items-center justify-center">
                 <div
                     className={`group relative overflow-hidden bg-white ${
-                        isVideo ? (isVideoLandscape ? landscapeClass : portraitClass) : orientation === 'landscape' ? landscapeClass : portraitClass
+                        isVideo
+                            ? isVideoLandscape
+                                ? landscapeClass
+                                : portraitClass
+                            : orientation === 'landscape'
+                              ? landscapeClass
+                              : portraitClass
                     }`}
                     onClick={!isVideo ? handleOpenModal : undefined}
                 >
@@ -108,9 +116,11 @@ export function Image({
 
                     {/* Credits Overlay */}
                     {!isVideo && (
-                        <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-base font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                        <div className="absolute bottom-0 left-1/2 flex h-1/2 w-[90%] -translate-x-1/2 transform items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-base font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
                             <div>
-                                {image?.styling && <p>Styling: {image.styling}</p>}
+                                {image?.styling && (
+                                    <p>Styling: {image.styling}</p>
+                                )}
                                 {image?.muah && <p>MUAH: {image.muah}</p>}
                                 {image?.credits && <p>{image.credits}</p>}
                                 {image?.photography && (
