@@ -76,11 +76,11 @@ import Jeanine_group1 from './Jeanine/ryhmäkuva1.jpg';
 import Jeanine_group2 from './Jeanine/ryhmäkuva2.jpg';
 import Jeanine_group3 from './Jeanine/ryhmäkuva3.jpg';
 import Jeanine_group4 from './Jeanine/ryhmäkuva4.jpg';
-import { metadata, sub } from 'framer-motion/client';
 
 export const veikkaus_images = {
     metadata: {
         description: 'Veikkaus',
+        subdescription: 'Leo Komarov',
         credits: 'Photography by Julius Konttinen, Styling by Saga Piik',
     },
     media: [
@@ -104,6 +104,7 @@ export const veikkaus_images = {
 export const olvi_selzer_images = {
     metadata: {
         description: 'Olvi, Hard Seltzer',
+        subdescription: '',
         credits:
             'Videographic by Mikko Kuoppasalmi & Julius Konttinen, Styling & MUAH by Saga Piik',
     },
@@ -171,6 +172,7 @@ export const hel_missio_images = {
 export const alko_images = {
     metadata: {
         description: 'Alko',
+        subdescription: '',
         credits: 'styling and MUAH by Saga Piik, TBWA Helsinki',
     },
 
@@ -195,6 +197,7 @@ export const alko_images = {
 export const olvi_motoroil_images = {
     metadata: {
         description: 'Olvi, Motor Oil',
+        subdescription: '',
         credits:
             'styling and muah by Saga Piik, Videography by Mikko Kuoppasalmi, photography by Julius Konttinen',
     },
@@ -221,6 +224,7 @@ export const olvi_motoroil_images = {
 export const elo_images = {
     metadata: {
         description: 'Elo Työeläkeyhtiö',
+        subdescription: '',
         credits: 'Styling and Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -265,6 +269,7 @@ export const elo_images = {
 export const atria_1_images = {
     metadata: {
         description: 'Atria Wilhelm',
+        subdescription: '',
         credits: 'Styling and Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -302,6 +307,7 @@ export const atria_1_images = {
 export const rastor_images = {
     metadata: {
         description: 'Rastor-instituutti',
+        subdescription: '',
         credits: 'Styling and Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -384,6 +390,7 @@ export const santa_maria_images = {
 export const atria_2_images = {
     metadata: {
         description: 'Atria Wilhelm',
+        subdescription: '',
         credits: 'Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
@@ -405,6 +412,7 @@ export const atria_2_images = {
 export const lahti_images = {
     metadata: {
         description: 'Lahden Kaupunki',
+        subdescription: '',
         credits: 'Muah by Saga Piik, TBWA Helsinki',
     },
     media: [

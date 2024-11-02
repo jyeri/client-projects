@@ -57,9 +57,9 @@ export function Image({
 
     // Define landscape and portrait classes for breakpoints
     const landscapeClass =
-        'h-[calc(100vh-var(--header-height))] w-full h-[60vh] w-[80vw] md:h-[30rem] md:w-[53rem] lg:h-[35rem] lg:w-[62.5rem] xl:h-[40rem] xl:w-[71rem]';
+        'h-[calc(100vh-var(--header-height))] w-full h-[60svh] w-[80vw] md:h-[30rem] md:w-[53rem] lg:h-[35rem] lg:w-[62.5rem] xl:h-[40rem] xl:w-[71rem]';
     const portraitClass =
-        'h-[90svh] w-auto max-h-[70svh] h-full w-full md:h-[53rem] md:w-[30rem] lg:h-[62.5rem] lg:w-[35rem] xl:h-[71rem] xl:w-[40rem]';
+        'h-[90svh] w-auto max-h-[70svh] h-[60svh] w-full md:h-[53rem] md:w-[30rem] lg:h-[62.5rem] lg:w-[35rem] xl:h-[71rem] xl:w-[40rem]';
 
     // Prepare metadata for modal
     const metadata = {
