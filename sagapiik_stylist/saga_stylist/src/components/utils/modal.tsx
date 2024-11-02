@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,15 +19,15 @@ export const Modal = ({ isOpen, onClose, images, metadata }: ModalProps) => {
 
     const isVideo = (url: string) => url.endsWith('.mp4');
 
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         setPreviewIndex((prevIndex) => (prevIndex! + 1) % images.length);
-    };
+    }, [images.length]);
 
-    const handlePrev = () => {
+    const handlePrev = useCallback(() => {
         setPreviewIndex((prevIndex) =>
             prevIndex! - 1 < 0 ? images.length - 1 : prevIndex! - 1
         );
-    };
+    }, [images.length]);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -37,7 +37,7 @@ export const Modal = ({ isOpen, onClose, images, metadata }: ModalProps) => {
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [onClose, previewIndex]);
+    }, [onClose, previewIndex, handleNext, handlePrev]);
 
     if (!isOpen) return null;
 

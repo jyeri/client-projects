@@ -29,7 +29,10 @@ export const Factorial = () => {
                         image={image}
                         images={Commercial_imageSets[index].media} // Pass entire media array for modal
                         title={Commercial_imageSets[index].metadata.description} // Access description from metadata
-                        subtitle={Commercial_imageSets[index].metadata.subdescription ?? ''}
+                        subtitle={
+                            Commercial_imageSets[index].metadata
+                                .subdescription ?? ''
+                        }
                         credits={Commercial_imageSets[index].metadata.credits} // Access credits from metadata
                     />
                 ))}

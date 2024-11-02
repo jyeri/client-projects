@@ -74,13 +74,13 @@ export function Image({
                                 ? landscapeClass
                                 : portraitClass
                             : orientation === 'landscape'
-                            ? landscapeClass
-                            : portraitClass
+                              ? landscapeClass
+                              : portraitClass
                     }`}
                     onClick={!isVideo ? handleOpenModal : undefined}
                 >
                     {/* Wrapper div for relative positioning */}
-                    <div className="relative w-full h-full">
+                    <div className="relative h-full w-full">
                         {isVideo ? (
                             <video
                                 src={src}
@@ -112,7 +112,7 @@ export function Image({
                         {/* Credits Overlay */}
                         {!isVideo && (
                             <div
-                                className="absolute bottom-0 left-1/2 flex h-1/2 w-[80%] -translate-x-1/2 transform items-center justify-center text-center font-headers text-xs sm:text-base font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                                className="absolute bottom-0 left-1/2 flex h-1/2 w-[80%] -translate-x-1/2 transform items-center justify-center text-center font-headers text-xs font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 sm:text-base"
                                 style={{
                                     background:
                                         'radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.8), transparent 65%)',
