@@ -20,9 +20,6 @@ import olvi_selzer_img2 from './Olvi_Seltzer/olvi_selzer_img2.png';
 import olvi_selzer_img3 from './Olvi_Seltzer/olvi_selzer_img3.png';
 import olvi_selzer_video1 from './Olvi_Seltzer/olvi_selzer_video1.mp4';
 
-import Hel_missio_img1 from './Helsinki_Missio_1.10.2021/Hel_missio_img1.png';
-import Hel_missio_img2 from './Helsinki_Missio_1.10.2021/Hel_missio_img2.png';
-import Hel_missio_img3 from './Helsinki_Missio_1.10.2021/Hel_missio_img3.png';
 import Hel_missio_video1 from './Helsinki_Missio_1.10.2021/Hel_missio_video1.mp4';
 import Hel_missio_video2 from './Helsinki_Missio_1.10.2021/Hel_missio_video2.mp4';
 import Hel_missio_video3 from './Helsinki_Missio_1.10.2021/Hel_missio_video3.mp4';
@@ -59,6 +56,27 @@ import Atria_2_video1 from './Atria_Wilhelm_17.1.2023/1. video.mp4';
 import Atria_2_video2 from './Atria_Wilhelm_17.1.2023/2. video.mp4';
 
 import Lahti_video1 from './LAHTI/lahti_asuminen_purjehdus_10s_1920x1080_webmix_online (1080p).mp4';
+
+import ilona_img1 from './Ilona/1. kuva.jpg';
+import ilona_img2 from './Ilona/2. kuva.jpg';
+import ilona_img3 from './Ilona/3. kuva.jpg';
+import ilona_img4 from './Ilona/4. kuva.jpg';
+
+import naku_img1 from './Naku/1. kuva.jpg';
+import naku_img2 from './Naku/2. kuva.jpg';
+import naku_img3 from './Naku/3. kuva.jpg';
+import naku_img4 from './Naku/4. kuva.jpg';
+import naku_img5 from './Naku/5. kuva.jpg';
+
+import Jeanine_img1 from './Jeanine/1. kuva.jpg';
+import Jeanine_img2 from './Jeanine/2. kuva.jpg';
+import Jeanine_img3 from './Jeanine/3. kuva.jpg';
+import Jeanine_img4 from './Jeanine/4. kuva.jpg';
+import Jeanine_group1 from './Jeanine/ryhmäkuva1.jpg';
+import Jeanine_group2 from './Jeanine/ryhmäkuva2.jpg';
+import Jeanine_group3 from './Jeanine/ryhmäkuva3.jpg';
+import Jeanine_group4 from './Jeanine/ryhmäkuva4.jpg';
+import { metadata, sub } from 'framer-motion/client';
 
 export const veikkaus_images = {
     metadata: {
@@ -399,6 +417,171 @@ export const lahti_images = {
     ],
 };
 
+export const Ilona_images = {
+    metadata: {
+        description: 'Ilona',
+        subdescription: 'Ilona Vuori / Wilhelmina Models',
+        credits:
+            'Styling by Saga Piik, photography by Johanna Rontu. Model: Ilona Vuori / Wilhelmina Models',
+    },
+    media: [
+        {
+            url: ilona_img1,
+            alt: 'Ilona 1',
+            styling: 'Saga Piik',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Ilona Vuori / Wilhelmina Models',
+        },
+        {
+            url: ilona_img2,
+            alt: 'Ilona 2',
+            styling: 'Saga Piik',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Ilona Vuori / Wilhelmina Models',
+        },
+        {
+            url: ilona_img3,
+            alt: 'Ilona 3',
+            styling: 'Saga Piik',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Ilona Vuori / Wilhelmina Models',
+        },
+        {
+            url: ilona_img4,
+            alt: 'Ilona 4',
+            styling: 'Saga Piik',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Ilona Vuori / Wilhelmina Models',
+        },
+    ],
+};
+
+export const Naku_images = {
+    metadata: {
+        description: 'NAKU',
+        subdescription: 'Anna Edwards',
+        credits:
+            'Styling by Saga Piik, muah by Anu Uusipulkamo, photography by Johanna Rontu. Model: Anna Edwards',
+    },
+    media: [
+        {
+            url: naku_img1,
+            alt: 'NAKU 1',
+            styling: 'Saga Piik',
+            muah: 'Anu Uusipulkamo',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Anna Edwards',
+        },
+        {
+            url: naku_img2,
+            alt: 'NAKU 2',
+            styling: 'Saga Piik',
+            muah: 'Anu Uusipulkamo',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Anna Edwards',
+        },
+        {
+            url: naku_img3,
+            alt: 'NAKU 3',
+            styling: 'Saga Piik',
+            muah: 'Anu Uusipulkamo',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Anna Edwards',
+        },
+        {
+            url: naku_img4,
+            alt: 'NAKU 4',
+            styling: 'Saga Piik',
+            muah: 'Anu Uusipulkamo',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Anna Edwards',
+        },
+        {
+            url: naku_img5,
+            alt: 'NAKU 5',
+            styling: 'Saga Piik',
+            muah: 'Anu Uusipulkamo',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Anna Edwards',
+        },
+    ],
+};
+
+export const Jeanine_images = {
+    metadata: {
+        description: 'Jeanine',
+        subdescription: 'Jeanine Muyima / Brand Model Management',
+        credits:
+            'Styling by Saga Piik, muah by Susanne Nieminen, photography by Johanna Rontu. Model: Jeanine Muyima / Brand Model Management',
+    },
+    media: [
+        {
+            url: Jeanine_img1,
+            alt: 'Jeanine 1',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_img2,
+            alt: 'Jeanine 2',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_img3,
+            alt: 'Jeanine 3',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_img4,
+            alt: 'Jeanine 4',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_group1,
+            alt: 'Jeanine 5',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_group2,
+            alt: 'Jeanine 6',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_group3,
+            alt: 'Jeanine 7',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+        {
+            url: Jeanine_group4,
+            alt: 'Jeanine 8',
+            styling: 'Saga Piik',
+            muah: 'Susanne Nieminen',
+            photography: 'Johanna Rontu',
+            credits: 'Model: Jeanine Muyima / Brand Model Management',
+        },
+    ],
+};
+
 export const landscape = [
     {
         url: landscape_ph1,
@@ -482,5 +665,7 @@ export const Commercial_imageSets = [
     atria_2_images,
     lahti_images,
 ];
+
+export const Editorial_imageSets = [Ilona_images, Naku_images, Jeanine_images];
 
 export const imageSets = [landscape, portrait, square];

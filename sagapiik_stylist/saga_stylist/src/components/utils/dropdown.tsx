@@ -73,7 +73,7 @@ export const Dropdownmenu = ({
 
                 <div
                     className={twMerge(
-                        'fixed left-0 top-[--header-row-height] z-[1100] w-screen bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
+                        'fixed left-0 top-[--header-toprow-height] z-[1100] w-screen bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
                         isChecked
                             ? 'scale-100 opacity-100'
                             : 'pointer-events-none scale-90 opacity-0'

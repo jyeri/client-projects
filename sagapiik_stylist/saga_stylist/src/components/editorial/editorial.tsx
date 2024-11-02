@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { landscape, portrait, square } from '../../images/index';
+import { Editorial_imageSets } from '../../images/index';
 import { Image } from '../utils/image';
 
-const imageSets = [landscape, portrait, square];
+const editorialImages = Editorial_imageSets.map((set) => set.media[0]); // Get first media item from each set
 
 export const Editorial = () => {
     const ref = useRef(null);
@@ -20,21 +20,21 @@ export const Editorial = () => {
                 ref={ref}
                 className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
             >
-                {imageSets.map((imageSet, index) => {
-                    const firstImage = imageSet[0]; // Extract the first image from each set
-                    return (
-                        <Image
-                            key={index}
-                            src={firstImage.url}
-                            alt={firstImage.alt}
-                            credits={firstImage.credits}
-                            muah={firstImage.muah}
-                            id={index + 1}
-                            images={imageSet} // Pass the entire image set for the modal slider
-                            title={`Image Set ${index + 1}`}
-                        />
-                    );
-                })}
+                {editorialImages.map((image, index) => (
+                    <Image
+                        key={index}
+                        src={image.url}
+                        alt={image.alt}
+                        id={index + 1}
+                        image={image}
+                        images={Editorial_imageSets[index].media} // Pass entire media array for modal
+                        title={Editorial_imageSets[index].metadata.description} // Access description from metadata
+                        subtitle={
+                            Editorial_imageSets[index].metadata.subdescription
+                        } // Access subtitle from metadata
+                        credits={Editorial_imageSets[index].metadata.credits} // Access credits from metadata
+                    />
+                ))}
             </div>
             <motion.div
                 className="fixed bottom-5 left-0 right-0 h-2 bg-black"

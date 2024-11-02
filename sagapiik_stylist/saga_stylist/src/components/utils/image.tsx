@@ -35,7 +35,7 @@ export function Image({
     const isVideo = src.endsWith('.mp4');
 
     // Detect orientation for images
-    const orientation = !isVideo ? useOrientation(src) : null;
+    const orientation = useOrientation(isVideo ? '' : src);
 
     const handleOpenModal = () => {
         setIsModalOpen(true);
@@ -116,7 +116,13 @@ export function Image({
 
                     {/* Credits Overlay */}
                     {!isVideo && (
-                        <div className="absolute bottom-0 left-1/2 flex h-1/2 w-[90%] -translate-x-1/2 transform items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-base font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                        <div
+                            className="absolute bottom-0 left-1/2 flex h-1/2 w-[80%] -translate-x-1/2 transform items-center justify-center text-center font-headers text-base font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                            style={{
+                                background:
+                                    'radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.8), transparent 65%)',
+                            }}
+                        >
                             <div>
                                 {image?.styling && (
                                     <p>Styling: {image.styling}</p>

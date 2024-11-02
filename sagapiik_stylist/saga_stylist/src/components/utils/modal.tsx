@@ -60,7 +60,7 @@ export const Modal = ({ isOpen, onClose, images, metadata }: ModalProps) => {
 
                         {/* Modal Content */}
                         <motion.div
-                            className="relative z-10 h-[90vh] w-[90vw] max-w-5xl overflow-y-auto rounded-lg bg-white p-8 shadow-lg"
+                            className="relative z-10 mt-[--header-height] h-[90vh] w-[90vw] max-w-5xl overflow-y-auto rounded-sm bg-white p-8 shadow-lg"
                             onClick={(e) => e.stopPropagation()}
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}

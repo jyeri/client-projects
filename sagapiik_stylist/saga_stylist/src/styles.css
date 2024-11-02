@@ -17,8 +17,11 @@
 
 @layer {
     :root {
-        --header-row-height: 50px;
-        --header-height: calc((var(--header-row-height) * 2) + 1px);
+        --header-toprow-height: 86px;
+        --header-botrow-height: 50px;
+        --header-height: calc(
+            (var(--header-toprow-height) + var(--header-botrow-height) + 1px)
+        );
         --hero-height: calc(100svh - var(--header-height));
         --header-row-height-broder: 51px;
     }
