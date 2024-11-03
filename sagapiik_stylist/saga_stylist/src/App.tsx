@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Header } from './components/header/header';
 import { Editorial } from './components/editorial/editorial';
-import { Factorial } from './components/commercial/commercial';
+import { Commercial } from './components/commercial/commercial';
 import { Aboutme } from './components/aboutme/aboutme';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -11,7 +11,7 @@ function App() {
     const renderContent = () => {
         switch (activeComponent) {
             case 'Factorial':
-                return <Factorial />;
+                return <Commercial />;
             case 'AboutMe':
                 return <Aboutme />;
             default:

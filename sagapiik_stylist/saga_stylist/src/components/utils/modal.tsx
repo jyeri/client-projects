@@ -12,6 +12,8 @@ type ModalProps = {
         subdescription?: string;
         credits?: string;
     };
+    selectedIndex?: number;
+    onNavigate: (index: number) => void;
 };
 
 export const Modal = ({ isOpen, onClose, images, metadata }: ModalProps) => {

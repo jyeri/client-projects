@@ -51,9 +51,9 @@ export function Image({
     }, [src, isVideo]);
 
     const landscapeClass =
-        'h-[calc(100vh-var(--header-height))] w-full h-[25svh] w-[80vw] md:h-[30rem] md:w-[53rem] lg:h-[35rem] lg:w-[62.5rem] xl:h-[40rem] xl:w-[71rem]';
+        'max-h-[50vh] w-full sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[45vw]';
     const portraitClass =
-        'h-[90svh] w-auto max-h-[70svh] h-[55svh] w-full md:h-[53rem] md:w-[30rem] lg:h-[62.5rem] lg:w-[35rem] xl:h-[71rem] xl:w-[40rem]';
+        'w-auto max-h-[70svh] h-auto sm:w-[50vw] md:w-[40vw] lg:w-[35vw] xl:w-[30vw]';
 
     const metadata = {
         description: title,
@@ -68,7 +68,7 @@ export function Image({
         >
             <Container className="relative flex h-full max-h-[100svh] w-full flex-col items-center justify-center">
                 <div
-                    className={`group relative overflow-hidden bg-white ${
+                    className={`group relative flex items-center justify-center bg-white ${
                         isVideo
                             ? isVideoLandscape
                                 ? landscapeClass
@@ -79,12 +79,11 @@ export function Image({
                     }`}
                     onClick={!isVideo ? handleOpenModal : undefined}
                 >
-                    {/* Wrapper div for relative positioning */}
-                    <div className="relative h-full w-full">
+                    <div className="relative flex h-full w-full items-center justify-center">
                         {isVideo ? (
                             <video
                                 src={src}
-                                className="absolute left-0 top-0 z-10 h-full w-full object-contain"
+                                className="h-full w-full object-contain"
                                 controls
                                 muted
                                 loop
@@ -95,11 +94,10 @@ export function Image({
                             <img
                                 src={src}
                                 alt={alt}
-                                className="absolute left-0 top-0 h-full w-full object-contain"
+                                className="h-full w-full object-contain"
                             />
                         )}
 
-                        {/* View Details Button only for videos */}
                         {isVideo && (
                             <button
                                 className="absolute left-1/2 top-5 z-20 -translate-x-1/2 transform bg-black px-3 py-1 text-sm text-white opacity-60 transition-all duration-300 ease-in-out hover:opacity-100"
@@ -109,16 +107,16 @@ export function Image({
                             </button>
                         )}
 
-                        {/* Credits Overlay */}
+                        {/* Overlay aligned with image/video content */}
                         {!isVideo && (
                             <div
-                                className="absolute bottom-0 left-1/2 flex h-1/2 w-[80%] -translate-x-1/2 transform items-center justify-center text-center font-headers text-xs font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 sm:text-base"
+                                className="absolute bottom-0 flex h-1/2 w-[80%] items-end justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 sm:text-base"
                                 style={{
                                     background:
-                                        'radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.8), transparent 65%)',
+                                        'radial-gradient(ellipse at bottom, rgba(0, 0, 0, 1), transparent 65%)',
                                 }}
                             >
-                                <div>
+                                <div className="w-[80%] pb-6 md:pb-16">
                                     {image?.styling && (
                                         <p>Styling: {image.styling}</p>
                                     )}
@@ -135,11 +133,13 @@ export function Image({
                         )}
                     </div>
                 </div>
-                <div className="relative mt-5 flex flex-col items-center justify-center">
-                    <h2 className="font-headers text-xl font-bold text-backgroundContrast md:text-2xl lg:text-3xl xl:text-4xl">
+
+                {/* Title positioning */}
+                <div className="relative mt-2 flex flex-col items-center justify-center md:mt-6">
+                    <h2 className="font-headers text-lg font-bold text-backgroundContrast sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                         {title}
                     </h2>
-                    <p className="font-headers text-xs text-textBlack md:text-base xl:text-xl">
+                    <p className="font-headers text-xs text-textBlack sm:text-sm md:text-base lg:text-lg xl:text-xl">
                         {subtitle}
                     </p>
                 </div>

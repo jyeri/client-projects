@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Editorial_imageSets } from '../../images/index';
-import { Image } from '../utils/image';
+import { Collage } from '../utils/collage';
 
 const editorialImages = Editorial_imageSets.map((set) => set.media[0]); // Get first media item from each set
 
@@ -21,7 +21,7 @@ export const Editorial = () => {
                 className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
             >
                 {editorialImages.map((image, index) => (
-                    <Image
+                    <Collage
                         key={index}
                         src={image.url}
                         alt={image.alt}

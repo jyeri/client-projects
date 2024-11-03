@@ -57,6 +57,39 @@
     background: transparent;
 }
 
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive min size */
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
+}
+
+.collage-item.landscape {
+    grid-column: span 2; /* Landscape images span two columns */
+    max-width: 100%; /* Ensure they fit the container */
+    justify-self: center;
+}
+
+.collage-item.portrait {
+    grid-column: span 1;
+    max-width: 100%;
+    max-height: 300px; /* Limit portrait height for smaller screens */
+}
+
+@media (max-width: 640px) {
+    .collage-grid {
+        grid-template-columns: 1fr; /* Stack images on small screens */
+    }
+    .collage-item.landscape,
+    .collage-item.portrait {
+        max-width: 100%;
+        max-height: 250px; /* Lower max height on smaller screens */
+    }
+}
+
+
+
 .icon-black path {
     fill: black !important;
 }
