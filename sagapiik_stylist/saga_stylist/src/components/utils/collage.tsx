@@ -11,6 +11,11 @@ import {
 type ImageProps = {
     url: string;
     alt: string;
+    credits?: string;
+    muah?: string;
+    photography?: string;
+    styling?: string;
+    videography?: string;
 };
 
 type CollageProps = {
@@ -96,7 +101,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                     {displayedImages.map((image, index) => (
                         <div
                             key={index}
-                            className="collage-item cursor-pointer"
+                            className="collage-item group relative cursor-pointer"
                             onClick={() => handleImageClick(startIndex + index)}
                         >
                             <img
@@ -104,6 +109,31 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                                 alt={image.alt}
                                 className="object-contain"
                             />
+                            {image.credits && (
+                                <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100 sm:text-base">
+                                    <p className="px-4">
+                                        {image?.styling && (
+                                            <p>Styling: {image.styling}</p>
+                                        )}
+                                        {image?.muah && (
+                                            <p>MUAH: {image.muah}</p>
+                                        )}
+                                        {image?.credits && (
+                                            <p>{image.credits}</p>
+                                        )}
+                                        {image?.photography && (
+                                            <p>
+                                                Photography: {image.photography}
+                                            </p>
+                                        )}
+                                        {image?.videography && (
+                                            <p>
+                                                Videography: {image.videography}
+                                            </p>
+                                        )}
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </motion.div>

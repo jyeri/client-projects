@@ -148,7 +148,7 @@ export const Modal = ({
                                                 className="h-auto max-h-[80vh] w-full object-contain"
                                             />
                                         )}
-                                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
                                             <span className="font-headers text-lg uppercase text-white">
                                                 Open in Preview
                                             </span>
