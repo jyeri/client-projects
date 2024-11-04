@@ -42,13 +42,13 @@ export const Header: React.FC<HeaderProps> = ({
                         onClick={() => setActiveComponent('Editorial')}
                         className="absolute left-1/2 -translate-x-1/2 transform"
                     >
-                        <p className="pb-3 pt-6 font-headers text-sm font-semibold tracking-wide sm:text-xl sm:tracking-wide2xl md:text-3.5xl md:tracking-wide3xl">
+                        <p className="pb-3 pt-6 font-headers text-lg font-semibold tracking-widest sm:text-xl sm:tracking-wide2xl md:text-3.5xl md:tracking-wide3xl">
                             SAGA PIIK
                         </p>
                     </a>
 
                     {/* Social Icons and Dropdown Menu */}
-                    <div className="flex items-center space-x-4 pr-2 pt-3">
+                    <div className="flex items-center space-x-4 pr-0 sm:pr-2 pt-3">
                         <a
                             href="https://www.instagram.com/stylistsagapiik/"
                             target="_blank"
@@ -57,14 +57,14 @@ export const Header: React.FC<HeaderProps> = ({
                         >
                             <FontAwesomeIcon
                                 icon={faInstagram}
-                                className="icon-black text-sm sm:text-base"
+                                className="icon-black text-xs sm:text-sm md:text-base"
                             />
                         </a>
 
                         <a href="#" className="text-black">
                             <FontAwesomeIcon
                                 icon={faTiktok}
-                                className="icon-black pl-2 text-sm sm:text-base"
+                                className="icon-black pl-0 sm:pl-2 text-xs sm:text-sm md:text-base"
                             />
                         </a>
 

@@ -81,7 +81,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
         <section className="relative flex h-[calc(100svh-var(--header-height))] snap-center items-center justify-center">
             <Container className="relative flex h-full max-h-[100svh] w-full flex-col items-center justify-center">
                 {metadata?.title && (
-                    <h2 className="relative bottom-4 w-full p-2 text-center font-headers text-lg font-bold tracking-wider text-textBlack md:text-xl lg:text-2xl">
+                    <h2 className="relative bottom-3 sm:bottom-4 w-full p-2 text-center font-headers text-base sm:text-lg font-bold tracking-wider text-textBlack md:text-xl lg:text-2xl">
                         {metadata.title}
                     </h2>
                 )}
@@ -111,27 +111,36 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                             />
                             {image.credits && (
                                 <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100 sm:text-base">
-                                    <p className="px-4">
-                                        {image?.styling && (
-                                            <p>Styling: {image.styling}</p>
-                                        )}
-                                        {image?.muah && (
-                                            <p>MUAH: {image.muah}</p>
-                                        )}
-                                        {image?.credits && (
-                                            <p>{image.credits}</p>
-                                        )}
-                                        {image?.photography && (
+                                    <div className="px-4">
+                                        {image.styling && (
                                             <p>
-                                                Photography: {image.photography}
+                                                Styling:{' '}
+                                                <span>{image.styling}</span>
                                             </p>
                                         )}
-                                        {image?.videography && (
+                                        {image.muah && (
                                             <p>
-                                                Videography: {image.videography}
+                                                MUAH: <span>{image.muah}</span>
                                             </p>
                                         )}
-                                    </p>
+                                        {image.credits && (
+                                            <p>
+                                                <span>{image.credits}</span>
+                                            </p>
+                                        )}
+                                        {image.photography && (
+                                            <p>
+                                                Photography:{' '}
+                                                <span>{image.photography}</span>
+                                            </p>
+                                        )}
+                                        {image.videography && (
+                                            <p>
+                                                Videography:{' '}
+                                                <span>{image.videography}</span>
+                                            </p>
+                                        )}
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -147,7 +156,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                         >
                             <FontAwesomeIcon
                                 icon={faChevronLeft}
-                                className="icon-black sm:text-sm md:text-base lg:text-xl"
+                                className="icon-black text-sm md:text-base lg:text-xl"
                             />
                         </button>
                         <button
@@ -157,7 +166,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                         >
                             <FontAwesomeIcon
                                 icon={faChevronRight}
-                                className="icon-black sm:text-sm md:text-base lg:text-xl"
+                                className="icon-black text-sm md:text-base lg:text-xl"
                             />
                         </button>
                     </>

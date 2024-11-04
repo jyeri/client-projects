@@ -102,24 +102,39 @@
     transition: transform 0.3s ease;
 }
 
-/* Adjust heights based on number of rows */
+/* Large screens */
 @media (min-width: 1024px) {
     .collage-item img {
-        max-height: calc(
-            70svh / 2
-        ); /* Four images: each at 45% of available space */
+        max-height: calc(70vh / 2); /* Each image at half height */
     }
 }
+
+/* Medium screens */
 @media (min-width: 768px) and (max-width: 1024px) {
     .collage-item img {
-        max-height: calc(
-            70svh / 2
-        ); /* Two images in a row for medium screens */
+        max-height: calc(70vh / 2); /* Two images in a row */
     }
 }
+
+/* Small screens: Adjust for portrait images */
 @media (max-width: 768px) {
     .collage-item img {
-        max-height: 70svh; /* Single image for small screens */
+        max-height: 55vh; /* Reduce height for portrait images on small screens */
+    }
+    .collage-grid {
+        max-width: 90vw; /* Smaller width to ensure fit on mobile */
+    }
+
+    /* Title adjustments for small screens */
+    .title-container h2,
+    .subtitle-container h2 {
+        padding-top: 1rem;
+        font-size: 1.25rem; /* Adjust title size */
+    }
+
+    /* Container padding for extra spacing */
+    .container-padding {
+        padding-bottom: 1rem;
     }
 }
 

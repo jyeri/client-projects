@@ -52,7 +52,7 @@ export function Image({
     const landscapeClass =
         'max-h-[50vh] w-full sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[45vw]';
     const portraitClass =
-        'w-auto max-h-[70svh] h-auto sm:w-[50vw] md:w-[40vw] lg:w-[35vw] xl:w-[30vw]';
+        'w-auto max-h-[65svh] h-auto sm:w-[50vw] md:w-[40vw] lg:w-[35vw] xl:w-[30vw]';
 
     const metadata = {
         description: title,
@@ -133,7 +133,7 @@ export function Image({
                 </div>
 
                 {/* Title positioning */}
-                <div className="relative mt-2 flex flex-col items-center justify-center md:mt-6">
+                <div className="container-padding relative mt-2 flex flex-col items-center justify-center md:mt-6">
                     <h2 className="font-headers text-lg font-bold text-backgroundContrast sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
                         {title}
                     </h2>
