@@ -61,7 +61,12 @@ export const Header: React.FC<HeaderProps> = ({
                             />
                         </a>
 
-                        <a href="#" className="text-black">
+                        <a
+                            href="https://www.tiktok.com/@sagapiik"
+                            className="text-black"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
                             <FontAwesomeIcon
                                 icon={faTiktok}
                                 className="icon-black pl-0 text-xs sm:pl-2 sm:text-sm md:text-base"

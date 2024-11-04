@@ -90,76 +90,68 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                         {metadata.description}
                     </h2>
                 )}
-
-<motion.div
-    className="collage-grid mt-16"
-    key={startIndex}
-    initial={{ opacity: 0.8 }}
-    animate={{ opacity: 1 }}
-    transition={{ type: 'spring', stiffness: 100 }}
->
-    <AnimatePresence mode="wait">
-        {displayedImages.map((image, index) => (
-            <motion.div
-                key={index}
-                className="collage-item group relative cursor-pointer"
-                onClick={() => handleImageClick(startIndex + index)}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                    duration: 0.8,
-                    ease: "easeInOut", // Smoother easing function
-                    delay: 0.1 // Small delay for exit animation
-                }}
-            >
-                                <img
-                                    src={image.url}
-                                    alt={image.alt}
-                                    className="object-contain"
-                                />
-                                {image.credits && (
-                                    <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100">
-                                        <div className="px-4">
-                                            {image.styling && (
-                                                <p>
-                                                    Styling:{' '}
-                                                    <span>{image.styling}</span>
-                                                </p>
-                                            )}
-                                            {image.muah && (
-                                                <p>
-                                                    MUAH:{' '}
-                                                    <span>{image.muah}</span>
-                                                </p>
-                                            )}
-                                            {image.credits && (
-                                                <p>
-                                                    <span>{image.credits}</span>
-                                                </p>
-                                            )}
-                                            {image.photography && (
-                                                <p>
-                                                    Photography:{' '}
-                                                    <span>
-                                                        {image.photography}
-                                                    </span>
-                                                </p>
-                                            )}
-                                            {image.videography && (
-                                                <p>
-                                                    Videography:{' '}
-                                                    <span>
-                                                        {image.videography}
-                                                    </span>
-                                                </p>
-                                            )}
-                                        </div>
+                <motion.div
+                    className="collage-grid mt-16"
+                    key={startIndex}
+                    initial={{ opacity: 0.8 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ type: 'spring', stiffness: 100 }}
+                >
+                    {displayedImages.map((image, index) => (
+                        <motion.div
+                            key={index}
+                            className="collage-item group relative cursor-pointer"
+                            onClick={() => handleImageClick(startIndex + index)}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{
+                                duration: 0.8,
+                                ease: 'easeInOut', // Smoother easing function
+                                delay: 0.1, // Small delay for exit animation
+                            }}
+                        >
+                            <img
+                                src={image.url}
+                                alt={image.alt}
+                                className="object-contain"
+                            />
+                            {image.credits && (
+                                <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100">
+                                    <div className="px-4">
+                                        {image.styling && (
+                                            <p>
+                                                Styling:{' '}
+                                                <span>{image.styling}</span>
+                                            </p>
+                                        )}
+                                        {image.muah && (
+                                            <p>
+                                                MUAH: <span>{image.muah}</span>
+                                            </p>
+                                        )}
+                                        {image.credits && (
+                                            <p>
+                                                <span>{image.credits}</span>
+                                            </p>
+                                        )}
+                                        {image.photography && (
+                                            <p>
+                                                Photography:{' '}
+                                                <span>{image.photography}</span>
+                                            </p>
+                                        )}
+                                        {image.videography && (
+                                            <p>
+                                                Videography:{' '}
+                                                <span>{image.videography}</span>
+                                            </p>
+                                        )}
                                     </div>
-                                )}
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
+                                </div>
+                            )}
+                        </motion.div>
+                    ))}
                 </motion.div>
 
                 {images.length > imagesToShow && (
@@ -187,7 +179,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                     </>
                 )}
 
-                <AnimatePresence>
+                <AnimatePresence mode="wait">
                     {isModalOpen && selectedImageIndex !== null && (
                         <Modal
                             isOpen={isModalOpen}

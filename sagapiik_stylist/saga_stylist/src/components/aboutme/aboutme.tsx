@@ -89,8 +89,10 @@ export const Aboutme = () => {
                                 />
                             </motion.a>
                             <motion.a
-                                href="#"
+                                href="https://www.tiktok.com/@sagapiik"
                                 className="text-black"
+                                rel="noopener noreferrer"
+                                target="_blank"
                                 whileHover={{ scale: 1.1 }}
                                 transition={{ duration: 0.3 }}
                             >
