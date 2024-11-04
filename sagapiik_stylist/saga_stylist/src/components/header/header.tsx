@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
                     </a>
 
                     {/* Social Icons and Dropdown Menu */}
-                    <div className="flex items-center space-x-4 pr-0 sm:pr-2 pt-3">
+                    <div className="flex items-center space-x-4 pr-0 pt-3 sm:pr-2">
                         <a
                             href="https://www.instagram.com/stylistsagapiik/"
                             target="_blank"
@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
                         <a href="#" className="text-black">
                             <FontAwesomeIcon
                                 icon={faTiktok}
-                                className="icon-black pl-0 sm:pl-2 text-xs sm:text-sm md:text-base"
+                                className="icon-black pl-0 text-xs sm:pl-2 sm:text-sm md:text-base"
                             />
                         </a>
 
