@@ -110,7 +110,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                                 className="object-contain"
                             />
                             {image.credits && (
-                                <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100 sm:text-base">
+                                <div className="absolute bottom-0 flex h-1/2 w-full items-center justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100">
                                     <div className="px-4">
                                         {image.styling && (
                                             <p>
