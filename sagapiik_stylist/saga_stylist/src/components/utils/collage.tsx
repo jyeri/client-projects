@@ -147,7 +147,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                         >
                             <FontAwesomeIcon
                                 icon={faChevronLeft}
-                                className="icon-black"
+                                className="icon-black sm:text-sm md:text-base lg:text-xl"
                             />
                         </button>
                         <button
@@ -157,7 +157,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                         >
                             <FontAwesomeIcon
                                 icon={faChevronRight}
-                                className="icon-black"
+                                className="icon-black sm:text-sm md:text-base lg:text-xl"
                             />
                         </button>
                     </>

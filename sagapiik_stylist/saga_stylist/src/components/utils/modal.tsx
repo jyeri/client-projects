@@ -194,7 +194,7 @@ export const Modal = ({
                             >
                                 <FontAwesomeIcon
                                     icon={faChevronLeft}
-                                    className="icon-white"
+                                    className="icon-white sm:text-base md:text-xl lg:text-2xl"
                                 />
                             </button>
                             <button
@@ -206,7 +206,7 @@ export const Modal = ({
                             >
                                 <FontAwesomeIcon
                                     icon={faChevronRight}
-                                    className="icon-white"
+                                    className="icon-white sm:text-base md:text-xl lg:text-2xl"
                                 />
                             </button>
                             <button
