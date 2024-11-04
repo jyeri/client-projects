@@ -5,18 +5,18 @@ import { Commercial } from './components/commercial/commercial';
 import { Aboutme } from './components/aboutme/aboutme';
 import { AnimatePresence, motion } from 'framer-motion';
 
-function App() {
-    const [activeComponent, setActiveComponent] = useState('Editorial');
+// Define the valid component types
+type ComponentType = 'Editorial' | 'Commercial' | 'AboutMe';
 
-    const renderContent = () => {
-        switch (activeComponent) {
-            case 'Factorial':
-                return <Commercial />;
-            case 'AboutMe':
-                return <Aboutme />;
-            default:
-                return <Editorial />;
-        }
+function App() {
+    const [activeComponent, setActiveComponent] =
+        useState<ComponentType>('Editorial');
+
+    // Lookup object for components, typed with ComponentType keys
+    const components: Record<ComponentType, JSX.Element> = {
+        Editorial: <Editorial />,
+        Commercial: <Commercial />,
+        AboutMe: <Aboutme />,
     };
 
     return (
@@ -26,6 +26,7 @@ function App() {
                 activeComponent={activeComponent}
             />
             <main className="relative">
+                {/* Animation wrapper to handle smooth transitions */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeComponent}
@@ -34,7 +35,7 @@ function App() {
                         exit={{ opacity: 0, y: 50 }}
                         transition={{ duration: 0.5 }}
                     >
-                        {renderContent()}
+                        {components[activeComponent]}
                     </motion.div>
                 </AnimatePresence>
             </main>

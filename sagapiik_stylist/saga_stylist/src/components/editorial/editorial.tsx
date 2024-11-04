@@ -3,10 +3,8 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { Editorial_imageSets } from '../../images/index';
 import { Collage } from '../utils/collage';
 
-const editorialImages = Editorial_imageSets.map((set) => set.media[0]); // Get first media item from each set
-
 export const Editorial = () => {
-    const ref = useRef(null);
+    const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ container: ref });
     const scaleX = useSpring(scrollYProgress, {
         stiffness: 100,
@@ -20,19 +18,15 @@ export const Editorial = () => {
                 ref={ref}
                 className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
             >
-                {editorialImages.map((image, index) => (
+                {Editorial_imageSets.map((set, index) => (
                     <Collage
                         key={index}
-                        src={image.url}
-                        alt={image.alt}
-                        id={index + 1}
-                        image={image}
-                        images={Editorial_imageSets[index].media} // Pass entire media array for modal
-                        title={Editorial_imageSets[index].metadata.description} // Access description from metadata
-                        subtitle={
-                            Editorial_imageSets[index].metadata.subdescription
-                        } // Access subtitle from metadata
-                        credits={Editorial_imageSets[index].metadata.credits} // Access credits from metadata
+                        images={set.media}
+                        metadata={{
+                            title: set.metadata.description,
+                            description: set.metadata.subdescription,
+                            credits: set.metadata.credits,
+                        }}
                     />
                 ))}
             </div>

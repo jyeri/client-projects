@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { Container } from '../container/container';
 import '../../styles.css';
 
+type ComponentType = 'Editorial' | 'Commercial' | 'AboutMe';
+
 type Props = {
-    setActiveComponent: (component: string) => void;
+    setActiveComponent: (component: ComponentType) => void;
     size?: 'small' | 'medium' | 'large';
     className?: string;
 };
@@ -23,7 +25,7 @@ export const Dropdownmenu = ({
         large: 'text-base',
     };
 
-    const toggleCheckbox = () => setIsChecked(!isChecked);
+    const toggleCheckbox = () => setIsChecked((prev) => !prev);
 
     return (
         <div
@@ -71,6 +73,7 @@ export const Dropdownmenu = ({
                     </svg>
                 </label>
 
+                {/* Dropdown Menu */}
                 <div
                     className={twMerge(
                         'fixed left-0 top-[--header-toprow-height] z-[1100] w-screen bg-white text-black shadow-lg transition-all duration-300 ease-in-out',
@@ -81,33 +84,35 @@ export const Dropdownmenu = ({
                 >
                     <Container className="bg-background">
                         <ul className="flex flex-col">
-                            {['Editorial', 'Factorial', 'AboutMe'].map(
-                                (link) => (
-                                    <li
-                                        key={link}
-                                        className="cursor-pointer transition-colors duration-200 ease-in-out"
+                            {(
+                                [
+                                    'Editorial',
+                                    'Commercial',
+                                    'AboutMe',
+                                ] as ComponentType[]
+                            ).map((link) => (
+                                <li
+                                    key={link}
+                                    className="cursor-pointer transition-colors duration-200 ease-in-out"
+                                >
+                                    <motion.a
+                                        onClick={() => setActiveComponent(link)}
                                     >
-                                        <motion.a
-                                            onClick={() =>
-                                                setActiveComponent(link)
-                                            }
+                                        <motion.div
+                                            className="py-2 text-base font-light uppercase"
+                                            whileHover={{ scale: 1.01 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            transition={{
+                                                type: 'spring',
+                                                stiffness: 400,
+                                                damping: 25,
+                                            }}
                                         >
-                                            <motion.div
-                                                className="py-2 text-base font-light uppercase"
-                                                whileHover={{ scale: 1.01 }}
-                                                whileTap={{ scale: 0.9 }}
-                                                transition={{
-                                                    type: 'spring',
-                                                    stiffness: 400,
-                                                    damping: 25,
-                                                }}
-                                            >
-                                                {link}
-                                            </motion.div>
-                                        </motion.a>
-                                    </li>
-                                )
-                            )}
+                                            {link}
+                                        </motion.div>
+                                    </motion.a>
+                                </li>
+                            ))}
                         </ul>
                     </Container>
                 </div>

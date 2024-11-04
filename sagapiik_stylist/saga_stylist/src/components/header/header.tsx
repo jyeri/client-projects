@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../container/container';
 import { Hoverlink } from '../utils/hoverlink';
@@ -7,9 +7,11 @@ import { twMerge } from 'tailwind-merge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons';
 
+type ComponentType = 'Editorial' | 'Commercial' | 'AboutMe';
+
 interface HeaderProps {
-    setActiveComponent: (component: string) => void;
-    activeComponent: string;
+    setActiveComponent: (component: ComponentType) => void;
+    activeComponent: ComponentType;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -17,35 +19,24 @@ export const Header: React.FC<HeaderProps> = ({
     activeComponent,
 }) => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const headerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrolled = window.scrollY > 50;
-            setIsScrolled(scrolled);
-        };
-
+        const handleScroll = () => setIsScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <>
             <header
-                ref={headerRef}
                 className={twMerge(
                     'sticky top-0 z-50 bg-background text-black',
                     isScrolled ? 'border-b border-backgroundContrast' : ''
                 )}
             >
                 <Container className="relative flex min-h-[--header-toprow-height] items-center justify-between px-4">
-                    {/* Invisible spacer div to maintain header alignment */}
                     <div className="flex-1"></div>
 
-                    {/* Centered header text */}
                     <a
                         href="#"
                         onClick={() => setActiveComponent('Editorial')}
@@ -56,13 +47,13 @@ export const Header: React.FC<HeaderProps> = ({
                         </p>
                     </a>
 
-                    {/* Social icons and dropdown menu on the right */}
+                    {/* Social Icons and Dropdown Menu */}
                     <div className="flex items-center space-x-4 pr-2 pt-3">
                         <a
-                            className="text-black"
                             href="https://www.instagram.com/stylistsagapiik/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="text-black"
                         >
                             <FontAwesomeIcon
                                 icon={faInstagram}
@@ -70,7 +61,7 @@ export const Header: React.FC<HeaderProps> = ({
                             />
                         </a>
 
-                        <a className="text-black" href="#">
+                        <a href="#" className="text-black">
                             <FontAwesomeIcon
                                 icon={faTiktok}
                                 className="icon-black pl-2 text-sm sm:text-base"
@@ -94,39 +85,32 @@ export const Header: React.FC<HeaderProps> = ({
 
             <div className="relative z-20 border-b border-backgroundContrast bg-background text-black">
                 <Container className="flex min-h-[--header-botrow-height] items-center justify-center">
-                    <a
-                        href="#"
-                        onClick={() => setActiveComponent('Editorial')}
-                        className="flex h-[--header-botrow-height] items-center"
-                    ></a>
-                    <div className="flex h-[--header-botrow-height] items-center">
-                        <nav className="flex space-x-2 sm:space-x-4 md:space-x-5 lg:space-x-10">
-                            <Hoverlink
-                                href="#Editorial"
-                                onClick={() => setActiveComponent('Editorial')}
-                                isActive={activeComponent === 'Editorial'}
-                                className="tracking-normal font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
-                            >
-                                editorial
-                            </Hoverlink>
-                            <Hoverlink
-                                href="#Factorial"
-                                onClick={() => setActiveComponent('Factorial')}
-                                isActive={activeComponent === 'Factorial'}
-                                className="tracking-normal font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
-                            >
-                                commercial
-                            </Hoverlink>
-                            <Hoverlink
-                                href="#AboutMe"
-                                onClick={() => setActiveComponent('AboutMe')}
-                                isActive={activeComponent === 'AboutMe'}
-                                className="tracking-tight font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
-                            >
-                                about me
-                            </Hoverlink>
-                        </nav>
-                    </div>
+                    <nav className="flex space-x-2 sm:space-x-4 md:space-x-5 lg:space-x-10">
+                        <Hoverlink
+                            href="#Editorial"
+                            onClick={() => setActiveComponent('Editorial')}
+                            isActive={activeComponent === 'Editorial'}
+                            className="tracking-normal font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
+                        >
+                            editorial
+                        </Hoverlink>
+                        <Hoverlink
+                            href="#Commercial"
+                            onClick={() => setActiveComponent('Commercial')}
+                            isActive={activeComponent === 'Commercial'}
+                            className="tracking-normal font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
+                        >
+                            commercial
+                        </Hoverlink>
+                        <Hoverlink
+                            href="#AboutMe"
+                            onClick={() => setActiveComponent('AboutMe')}
+                            isActive={activeComponent === 'AboutMe'}
+                            className="tracking-tight font-headers text-lg text-xs font-light sm:text-sm sm:tracking-wide md:text-base md:tracking-wider lg:text-lg"
+                        >
+                            about me
+                        </Hoverlink>
+                    </nav>
                 </Container>
             </div>
         </>

@@ -24,11 +24,19 @@ export const Hoverlink = ({
         >
             <span
                 className={twMerge(
-                    'absolute bottom-0 left-0 right-0 z-[-1] h-full origin-bottom bg-backgroundContrast transition-transform duration-300 ease-in-out group-hover:scale-y-100',
-                    isActive ? 'scale-y-[0.2]' : 'scale-y-0'
+                    'absolute bottom-0 left-0 right-0 z-[-1] h-full origin-bottom bg-backgroundContrast transition-transform duration-300 ease-in-out',
+                    isActive ? 'scale-y-[0.2]' : 'scale-y-0',
+                    'group-hover:scale-y-100'
                 )}
             />
-            <motion.span className="relative block">{children}</motion.span>
+            <motion.span
+                className="relative block"
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+            >
+                {children}
+            </motion.span>
         </a>
     );
 };

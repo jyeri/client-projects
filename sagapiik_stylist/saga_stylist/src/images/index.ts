@@ -72,10 +72,7 @@ import Jeanine_img1 from './Jeanine/1. kuva.jpg';
 import Jeanine_img2 from './Jeanine/2. kuva.jpg';
 import Jeanine_img3 from './Jeanine/3. kuva.jpg';
 import Jeanine_img4 from './Jeanine/4. kuva.jpg';
-import Jeanine_group1 from './Jeanine/ryhmäkuva1.jpg';
-import Jeanine_group2 from './Jeanine/ryhmäkuva2.jpg';
-import Jeanine_group3 from './Jeanine/ryhmäkuva3.jpg';
-import Jeanine_group4 from './Jeanine/ryhmäkuva4.jpg';
+import Jeanine_group from './Jeanine/jeanine_group1.jpg';
 
 export const veikkaus_images = {
     metadata: {
@@ -556,32 +553,8 @@ export const Jeanine_images = {
             credits: 'Model: Jeanine Muyima / Brand Model Management',
         },
         {
-            url: Jeanine_group1,
+            url: Jeanine_group,
             alt: 'Jeanine 5',
-            styling: 'Saga Piik',
-            muah: 'Susanne Nieminen',
-            photography: 'Johanna Rontu',
-            credits: 'Model: Jeanine Muyima / Brand Model Management',
-        },
-        {
-            url: Jeanine_group2,
-            alt: 'Jeanine 6',
-            styling: 'Saga Piik',
-            muah: 'Susanne Nieminen',
-            photography: 'Johanna Rontu',
-            credits: 'Model: Jeanine Muyima / Brand Model Management',
-        },
-        {
-            url: Jeanine_group3,
-            alt: 'Jeanine 7',
-            styling: 'Saga Piik',
-            muah: 'Susanne Nieminen',
-            photography: 'Johanna Rontu',
-            credits: 'Model: Jeanine Muyima / Brand Model Management',
-        },
-        {
-            url: Jeanine_group4,
-            alt: 'Jeanine 8',
             styling: 'Saga Piik',
             muah: 'Susanne Nieminen',
             photography: 'Johanna Rontu',

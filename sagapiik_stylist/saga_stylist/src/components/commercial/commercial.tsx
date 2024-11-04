@@ -3,8 +3,6 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { Commercial_imageSets } from '../../images/index';
 import { Image } from '../utils/image';
 
-const commercialImages = Commercial_imageSets.map((set) => set.media[0]); // Get first media item from each set
-
 export const Commercial = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ container: ref });
@@ -20,24 +18,16 @@ export const Commercial = () => {
                 ref={ref}
                 className="relative h-[calc(100dvh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll hover:overflow-y-auto"
             >
-                {commercialImages.map((image, index) => (
+                {Commercial_imageSets.map((set, index) => (
                     <div key={index} className="snap-center">
                         <Image
-                            src={image.url}
-                            alt={image.alt}
-                            id={index + 1}
-                            image={image}
-                            images={Commercial_imageSets[index].media}
-                            title={
-                                Commercial_imageSets[index].metadata.description
-                            }
-                            subtitle={
-                                Commercial_imageSets[index].metadata
-                                    .subdescription ?? ''
-                            }
-                            credits={
-                                Commercial_imageSets[index].metadata.credits
-                            }
+                            src={set.media[0].url}
+                            alt={set.media[0].alt}
+                            image={set.media[0]}
+                            images={set.media}
+                            title={set.metadata.description}
+                            subtitle={set.metadata.subdescription ?? ''}
+                            credits={set.metadata.credits}
                         />
                     </div>
                 ))}

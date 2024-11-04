@@ -3,18 +3,13 @@ import { Container } from '../container/container';
 import { Modal } from './modal';
 import useOrientation from '../hooks/useOrientation';
 
-export function Image({
-    src,
-    alt,
-    image,
-    images,
-    title,
-    subtitle,
-    credits,
-}: {
+type ImageProps = {
     src: string;
     alt: string;
-    id: number;
+    images: { url: string; alt: string }[];
+    title: string;
+    subtitle?: string;
+    credits?: string;
     image?: {
         credits?: string;
         muah?: string;
@@ -22,21 +17,23 @@ export function Image({
         styling?: string;
         videography?: string;
     };
-    images: { url: string; alt: string }[];
-    title: string;
-    subtitle?: string;
-    credits?: string;
-}) {
+};
+
+export function Image({
+    src,
+    alt,
+    images,
+    title,
+    subtitle,
+    credits,
+    image,
+}: ImageProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isVideoLandscape, setIsVideoLandscape] = useState(true);
     const ref = useRef(null);
 
     const isVideo = src.endsWith('.mp4');
     const orientation = useOrientation(isVideo ? '' : src);
-
-    const handleOpenModal = () => {
-        setIsModalOpen(true);
-    };
 
     useEffect(() => {
         if (isVideo) {
@@ -49,6 +46,8 @@ export function Image({
             };
         }
     }, [src, isVideo]);
+
+    const handleOpenModal = () => setIsModalOpen(true);
 
     const landscapeClass =
         'max-h-[50vh] w-full sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[45vw]';
@@ -103,11 +102,10 @@ export function Image({
                                 className="absolute left-1/2 top-5 z-20 -translate-x-1/2 transform bg-black px-3 py-1 text-sm text-white opacity-60 transition-all duration-300 ease-in-out hover:opacity-100"
                                 onClick={handleOpenModal}
                             >
-                                More Details
+                                More about the project
                             </button>
                         )}
 
-                        {/* Overlay aligned with image/video content */}
                         {!isVideo && (
                             <div
                                 className="absolute bottom-0 flex h-1/2 w-[80%] items-end justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 sm:text-base"
@@ -149,6 +147,7 @@ export function Image({
                 onClose={() => setIsModalOpen(false)}
                 images={images}
                 metadata={metadata}
+                selectedIndex={0}
             />
         </section>
     );
