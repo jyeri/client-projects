@@ -102,9 +102,9 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                             key={index}
                             className="collage-item group relative cursor-pointer"
                             onClick={() => handleImageClick(startIndex + index)}
-                            initial={{ opacity: 0 }}
+                            initial={{ opacity: 0.1 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            exit={{ opacity: 0.1 }}
                             transition={{
                                 duration: 0.8,
                                 ease: 'easeInOut', // Smoother easing function
