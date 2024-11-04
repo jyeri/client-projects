@@ -16,7 +16,7 @@ export const Editorial = () => {
         <>
             <div
                 ref={ref}
-                className="h-[calc(100vh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll"
+                className="relative h-[calc(100dvh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll hover:overflow-y-auto"
             >
                 {Editorial_imageSets.map((set, index) => (
                     <Collage
