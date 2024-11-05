@@ -86,7 +86,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                     </h2>
                 )}
                 {metadata?.description && (
-                    <h2 className="relative bottom-8 w-full p-2 text-center font-headers text-sm font-bold tracking-wider text-backgroundContrast md:text-base lg:text-xl">
+                    <h2 className="relative bottom-4 lg:bottom-8 w-full p-2 text-center font-headers text-sm font-bold tracking-wider text-backgroundContrast md:text-base lg:text-lg">
                         {metadata.description}
                     </h2>
                 )}
