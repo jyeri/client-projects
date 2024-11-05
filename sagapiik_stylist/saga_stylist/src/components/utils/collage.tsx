@@ -186,7 +186,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                             onClose={() => setIsModalOpen(false)}
                             images={images}
                             metadata={{
-                                description: metadata?.description,
+                                description: metadata?.title,
                                 credits: metadata?.credits,
                             }}
                             selectedIndex={selectedImageIndex}
