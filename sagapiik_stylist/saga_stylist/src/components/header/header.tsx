@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({
                     isScrolled ? 'border-b border-backgroundContrast' : ''
                 )}
             >
-                <Container className="relative flex min-h-[--header-toprow-height] items-center justify-between px-4">
+                <Container className="relative flex min-h-[--header-toprow-height] items-center justify-between">
                     <div className="flex-1"></div>
 
                     <a
