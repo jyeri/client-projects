@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
                     </a>
 
                     {/* Social Icons and Dropdown Menu */}
-                    <div className="flex items-center space-x-4 pr-0 pt-3 sm:pr-2">
+                    <div className="flex items-center pr-0 pt-3 sm:pr-2">
                         <a
                             href="https://www.instagram.com/stylistsagapiik/"
                             target="_blank"
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
                         >
                             <FontAwesomeIcon
                                 icon={faInstagram}
-                                className="icon-black text-xs sm:text-sm md:text-base"
+                                className="icon-black text-xs md:mr-2 sm:text-sm md:text-base"
                             />
                         </a>
 
@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({
                         >
                             <FontAwesomeIcon
                                 icon={faTiktok}
-                                className="icon-black pl-0 text-xs sm:pl-2 sm:text-sm md:text-base"
+                                className="icon-black text-xs pl-2 sm:text-sm md:text-base"
                             />
                         </a>
 
@@ -90,7 +90,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             <div className="relative z-20 border-b border-backgroundContrast bg-background text-black">
                 <Container className="flex min-h-[--header-botrow-height] items-center justify-center">
-                    <nav className="flex space-x-2 sm:space-x-4 md:space-x-5 lg:space-x-10">
+                    <nav className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10">
                         <Hoverlink
                             href="#Editorial"
                             onClick={() => setActiveComponent('Editorial')}

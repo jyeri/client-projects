@@ -16,7 +16,7 @@ export const Commercial = () => {
         <>
             <div
                 ref={ref}
-                className="relative h-[calc(100dvh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll hover:overflow-y-auto"
+                className="relative h-[calc(100svh-var(--header-height))] snap-y snap-mandatory overflow-y-scroll hover:overflow-y-auto"
             >
                 {Commercial_imageSets.map((set, index) => (
                     <div key={index} className="snap-center">
