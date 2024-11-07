@@ -132,6 +132,7 @@ export const Modal = ({
                                                     className="h-auto max-h-[80vh] w-full object-contain"
                                                     muted
                                                     loop
+                                                    preload="metadata"
                                                 />
                                                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                                                     <FontAwesomeIcon

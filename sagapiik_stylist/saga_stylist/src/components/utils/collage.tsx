@@ -81,17 +81,17 @@ export const Collage = ({ images, metadata }: CollageProps) => {
         <section className="relative flex h-[calc(100svh-var(--header-height))] snap-center items-center justify-center">
             <Container className="relative flex h-full max-h-[100svh] w-full flex-col items-center justify-center">
                 {metadata?.title && (
-                    <h2 className="relative mt-[50px] w-full text-center font-headers text-base font-bold tracking-wider text-textBlack sm:bottom-4 sm:text-lg md:text-xl lg:text-2xl">
+                    <h2 className="text-responsive-title relative w-full text-center font-headers font-bold tracking-wider text-textBlack">
                         {metadata.title}
                     </h2>
                 )}
                 {metadata?.description && (
-                    <h2 className="relative w-full p-2 text-center font-headers text-sm font-bold tracking-wider text-backgroundContrast md:text-base lg:text-lg">
+                    <h2 className="text-responsive-description relative w-full p-2 text-center font-headers font-bold tracking-wider text-backgroundContrast">
                         {metadata.description}
                     </h2>
                 )}
                 <motion.div
-                    className="collage-grid mt-16"
+                    className="collage-grid"
                     key={startIndex}
                     initial={{ opacity: 0.8 }}
                     animate={{ opacity: 1 }}

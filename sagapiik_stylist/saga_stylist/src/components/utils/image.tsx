@@ -87,6 +87,7 @@ export function Image({
                                 muted
                                 loop
                                 playsInline
+                                preload="metadata"
                                 onClick={(e) => e.stopPropagation()}
                             />
                         ) : (
