@@ -81,7 +81,7 @@ export function Image({
                     <div className="relative flex h-full w-full items-center justify-center">
                         {isVideo ? (
                             <video
-                                src={src}
+                                src={isVideo ? `${src}#t=0.001` : src}
                                 className="h-full w-full object-contain"
                                 controls
                                 muted
