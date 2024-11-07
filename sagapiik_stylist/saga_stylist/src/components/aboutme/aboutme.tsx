@@ -12,27 +12,33 @@ export const Aboutme = () => {
 
     return (
         <Container>
-            <section className="flex flex-col items-center justify-between p-6 md:flex-row md:gap-12">
-                <motion.div
-                    className="relative aspect-square h-full w-full overflow-hidden md:w-1/2"
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    whileHover={{ scale: 1.05 }}
-                >
-                    <img
-                        src={aboutmeImage.url}
-                        alt={aboutmeImage.alt}
-                        className="absolute left-0 top-0 h-full w-full rounded-lg object-contain shadow-lg"
-                        style={{
-                            borderRadius: '5%',
-                            maskImage:
-                                'radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%)',
-                            WebkitMaskImage:
-                                'radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%)',
-                        }}
-                    />
-                </motion.div>
+            <section className="flex flex-col items-center gap-10 justify-between p-6 md:flex-row md:gap-12">
+                <div className="w-full md:w-1/2">
+                    <motion.div
+                        className="relative w-full aspect-square rounded-lg overflow-hidden"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <img
+                            src={aboutmeImage.url}
+                            alt={aboutmeImage.alt}
+                            className="absolute left-0 top-0 h-full w-full object-contain shadow-lg"
+                            style={{
+                                borderRadius: '5%',
+                                maskImage:
+                                    'radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%)',
+                                WebkitMaskImage:
+                                    'radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%)',
+                            }}
+                        />
+                    </motion.div>
+                    {/* This h3 is placed outside the flex container to ensure it doesn't affect the image size */}
+                    <h3 className="mt-4 text-center font-headers text-textBlack text-xs sm:text-sm md:text-base">
+                        Editorial, commercial,<br /> personal styling & wardrobe consultations, events
+                    </h3>
+                </div>
                 <div className="flex w-full flex-col gap-8 p-5 text-center md:w-1/2">
                     <div>
                         <h2 className="font-headers text-xl font-semibold tracking-widest md:text-2xl lg:text-3xl">
@@ -131,7 +137,7 @@ export const Aboutme = () => {
                                     className="text-md icon-black sm:text-xl"
                                 />
                                 <span className="font-headers text-base sm:text-lg">
-                                    sagapiik.styling@gmail.com
+                                    saga.piik@gmail.com
                                 </span>
                             </div>
                             <div className="flex items-center justify-center gap-2">
@@ -140,7 +146,7 @@ export const Aboutme = () => {
                                     className="text-md icon-black sm:text-xl"
                                 />
                                 <span className="font-headers text-base sm:text-lg">
-                                    +358 40 123 4567
+                                    +358 45 1284896
                                 </span>
                             </div>
                         </div>
