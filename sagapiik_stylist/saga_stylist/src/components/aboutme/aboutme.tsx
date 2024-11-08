@@ -12,10 +12,10 @@ export const Aboutme = () => {
 
     return (
         <Container>
-            <section className="flex flex-col items-center gap-10 justify-between p-6 md:flex-row md:gap-12">
+            <section className="flex flex-col items-center justify-between gap-10 p-6 md:flex-row md:gap-12">
                 <div className="w-full md:w-1/2">
                     <motion.div
-                        className="relative w-full aspect-square rounded-lg overflow-hidden"
+                        className="relative aspect-square w-full overflow-hidden rounded-lg"
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.6 }}
@@ -35,8 +35,9 @@ export const Aboutme = () => {
                         />
                     </motion.div>
                     {/* This h3 is placed outside the flex container to ensure it doesn't affect the image size */}
-                    <h3 className="mt-4 text-center font-headers text-textBlack text-xs sm:text-sm md:text-base">
-                        Editorial, commercial,<br /> personal styling & wardrobe consultations, events
+                    <h3 className="mt-4 text-center font-headers text-xs text-textBlack sm:text-sm md:text-base">
+                        Editorial, commercial,
+                        <br /> personal styling & wardrobe consultations, events
                     </h3>
                 </div>
                 <div className="flex w-full flex-col gap-8 p-5 text-center md:w-1/2">

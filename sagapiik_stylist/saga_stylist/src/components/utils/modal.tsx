@@ -128,7 +128,7 @@ export const Modal = ({
                                         {isVideo(media.url) ? (
                                             <div className="relative">
                                                 <video
-                                                    src={`${media.url}#t=0.001`} 
+                                                    src={`${media.url}#t=0.001`}
                                                     className="h-auto max-h-[80vh] w-full object-contain"
                                                     muted
                                                     loop

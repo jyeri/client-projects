@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
                         >
                             <FontAwesomeIcon
                                 icon={faInstagram}
-                                className="icon-black text-xs md:mr-2 sm:text-sm md:text-base"
+                                className="icon-black text-xs sm:text-sm md:mr-2 md:text-base"
                             />
                         </a>
 
@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({
                         >
                             <FontAwesomeIcon
                                 icon={faTiktok}
-                                className="icon-black text-xs pl-2 sm:text-sm md:text-base"
+                                className="icon-black pl-2 text-xs sm:text-sm md:text-base"
                             />
                         </a>
 

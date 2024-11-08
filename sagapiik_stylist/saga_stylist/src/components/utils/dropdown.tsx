@@ -36,7 +36,7 @@ export const Dropdownmenu = ({
             )}
         >
             {/* SVG Button */}
-            <div className="menu cross menu--1 relative z-[1100] mt-1 sm:mt-0 h-10 w-10 md:h-12 md:w-12 p-0">
+            <div className="menu cross menu--1 relative z-[1100] mt-1 h-10 w-10 p-0 sm:mt-0 md:h-12 md:w-12">
                 <label className="absolute flex h-full w-full cursor-pointer items-center justify-center text-white">
                     <input
                         type="checkbox"

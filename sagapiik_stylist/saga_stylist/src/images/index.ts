@@ -62,6 +62,11 @@ import Jeanine_img3 from './Jeanine/3. kuva.jpg';
 import Jeanine_img4 from './Jeanine/4. kuva.jpg';
 import Jeanine_group from './Jeanine/jeanine_group1.jpg';
 
+import Wetshow_img1 from './Wet_Show/kuva 1.png';
+import Wetshow_img2 from './Wet_Show/kuva 2.png';
+import Wetshow_img3 from './Wet_Show/kuva 3.png';
+import Wetshow_img4 from './Wet_Show/kuva 4.png';
+
 export const veikkaus_images = {
     metadata: {
         description: 'Veikkaus',
@@ -551,6 +556,40 @@ export const Jeanine_images = {
     ],
 };
 
+export const Wetshow_images = {
+    metadata: {
+        description: 'Wet Show',
+        subdescription: 'Sim Liivik',
+        credits: 'Styling by Saga Piik, muah by Saga Piik',
+    },
+    media: [
+        {
+            url: Wetshow_img1,
+            alt: 'Wet Show 1',
+            styling: 'Saga Piik',
+            muah: 'Saga Piik',
+        },
+        {
+            url: Wetshow_img2,
+            alt: 'Wet Show 2',
+            styling: 'Saga Piik',
+            muah: 'Saga Piik',
+        },
+        {
+            url: Wetshow_img3,
+            alt: 'Wet Show 3',
+            styling: 'Saga Piik',
+            muah: 'Saga Piik',
+        },
+        {
+            url: Wetshow_img4,
+            alt: 'Wet Show 4',
+            styling: 'Saga Piik',
+            muah: 'Saga Piik',
+        },
+    ],
+};
+
 export const aboutmeImage = {
     url: aboutme_ph,
     alt: 'About Me',
@@ -570,6 +609,7 @@ export const Commercial_imageSets = [
     santa_maria_images,
     atria_2_images,
     lahti_images,
+    Wetshow_images,
 ];
 
 export const Editorial_imageSets = [Ilona_images, Naku_images, Jeanine_images];
