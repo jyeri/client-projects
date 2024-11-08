@@ -268,3 +268,77 @@ label:hover circle {
 }
 
 /* Aboutme */
+/* title styles */
+.aboutme-text span {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 1.3;
+}
+
+.aboutme-text span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: a-ltr-after 3s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+    transform: translateX(-101%);
+}
+
+.aboutme-text span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: a-ltr-before 1s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+    transform: translateX(0);
+}
+
+.aboutme-text span:nth-of-type(1)::before,
+.aboutme-text span:nth-of-type(1)::after {
+    animation-delay: 0.1s;
+}
+
+.aboutme-text span:nth-of-type(2)::before,
+.aboutme-text span:nth-of-type(2)::after {
+    animation-delay: 0.25s;
+}
+
+.aboutme-text span:nth-of-type(3)::before,
+.aboutme-text span:nth-of-type(3)::after {
+    animation-delay: 0.5s;
+}
+
+.aboutme-text span:nth-of-type(4)::before,
+.aboutme-text span:nth-of-type(4)::after {
+    animation-delay: 0.75s;
+}
+
+.aboutme-text span:nth-of-type(5)::before,
+.aboutme-text span:nth-of-type(5)::after {
+    animation-delay: 1s;
+}
+
+@keyframes a-ltr-after {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(101%);
+    }
+}
+
+@keyframes a-ltr-before {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}

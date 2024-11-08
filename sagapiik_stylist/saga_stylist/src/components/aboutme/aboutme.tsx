@@ -45,36 +45,47 @@ export const Aboutme = () => {
                         <h2 className="font-headers text-xl font-semibold tracking-widest md:text-2xl lg:text-3xl">
                             About Me
                         </h2>
-                        <p className="mt-5 font-headers text-sm md:text-base lg:text-lg">
-                            Hi there! My name is Saga Piik and I am a fashion
-                            stylist based in Helsinki. I have background in
-                            fashion marketing and I have studied fashion styling
-                            and photography in Milan.
+                        <p className="aboutme-text mt-5 font-headers text-sm md:text-base lg:text-lg">
+                            <span>
+                                Hi there! My name is Saga Piik and I am a
+                                fashion stylist based in Helsinki. I have
+                                background in fashion marketing and I have
+                                studied fashion styling and photography in
+                                Milan.
+                            </span>
                             <br /> <br />
-                            How did I end up here? My journey started after
-                            graduating from high school in 2015. I have always
-                            been interested in fashion and I wanted to learn
-                            more about it. I decided to study fashion marketing
-                            in Helsinki Design School.
+                            <span>
+                                How did I end up here? My journey started after
+                                graduating from high school in 2015. I have
+                                always been interested in fashion and I wanted
+                                to learn more about it. I decided to study
+                                fashion marketing in Helsinki Design School.
+                            </span>
                             <br />
-                            After that I worked in retail for a few years and I
-                            realized that I wanted to do something more
-                            creative. That's when I decided to start my own
-                            business. I founded Saga Piik Styling in 2020 and I
-                            have been working as a stylist ever since. To
-                            further my knowledge in the field, I decided to
-                            study fashion styling and photography in Istituto
-                            Marangoni Milan.
+                            <span>
+                                After that I worked in retail for a few years
+                                and I realized that I wanted to do something
+                                more creative. That's when I decided to start my
+                                own business. I founded Saga Piik Styling in
+                                2020 and I have been working as a stylist ever
+                                since. To further my knowledge in the field, I
+                                decided to study fashion styling and photography
+                                in Istituto Marangoni Milan.
+                            </span>
                             <br /> <br />
-                            How could I be in your service? I am available for
-                            commercial and editorial projects. I offer styling
-                            services for photoshoots, fashion shows, events etc.
-                            I can also help you with personal styling and
-                            wardrobe consultations.
+                            <span>
+                                How could I be in your service? I am available
+                                for commercial and editorial projects. I offer
+                                styling services for photoshoots, fashion shows,
+                                events etc. I can also help you with personal
+                                styling and wardrobe consultations.
+                            </span>
                             <br />
-                            If you are interested in working with me, feel free
-                            to contact me. I am looking forward to hearing from
-                            you!
+                            <span>
+                                If you are interested in working with me, feel
+                                free to contact me. I am looking forward to
+                                hearing from you!
+                            </span>
                         </p>
                     </div>
                     <div className="rounded-sm border border-[#DADADA] p-4">
