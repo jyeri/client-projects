@@ -107,8 +107,8 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                             exit={{ opacity: 0.1 }}
                             transition={{
                                 duration: 0.8,
-                                ease: 'easeInOut', // Smoother easing function
-                                delay: 0.1, // Small delay for exit animation
+                                ease: 'easeInOut',
+                                delay: 0.1,
                             }}
                         >
                             <img

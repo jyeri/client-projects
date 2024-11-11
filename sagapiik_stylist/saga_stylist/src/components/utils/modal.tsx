@@ -48,7 +48,7 @@ export const Modal = ({
                 block: 'center',
             });
         }
-        setPreviewIndex(null); // Reset preview on modal open
+        setPreviewIndex(null);
     }, [isOpen, selectedIndex]);
 
     useEffect(() => {
