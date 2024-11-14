@@ -34,17 +34,28 @@ export const Collage = ({ images, metadata }: CollageProps) => {
     );
     const [startIndex, setStartIndex] = useState(0);
     const [imagesToShow, setImagesToShow] = useState(4);
+    const isLandscape = () => window.innerWidth > window.innerHeight;
 
     useEffect(() => {
         const updateImagesToShow = () => {
-            if (window.innerWidth >= 1024) {
+            if (isLandscape() && window.innerHeight <= 600) {
+                setImagesToShow(1);
+            }
+            else if (isLandscape() && window.innerHeight <= 800){
+                setImagesToShow(2);
+            }
+            else if (window.innerWidth >= 1024) {
+                // Large screens
                 setImagesToShow(4);
             } else if (window.innerWidth >= 768) {
+                // Medium screens
                 setImagesToShow(2);
             } else {
+                // Small screens
                 setImagesToShow(1);
             }
         };
+
         updateImagesToShow();
         window.addEventListener('resize', updateImagesToShow);
         return () => window.removeEventListener('resize', updateImagesToShow);
