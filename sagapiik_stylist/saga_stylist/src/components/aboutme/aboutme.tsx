@@ -36,8 +36,8 @@ export const Aboutme = () => {
                     </motion.div>
                     {/* This h3 is placed outside the flex container to ensure it doesn't affect the image size */}
                     <h3 className="mt-4 text-center font-headers text-xs text-textBlack sm:text-sm md:text-base">
-                        Editorial, commercial,
-                        <br /> personal styling & wardrobe consultations, events
+                        Editorial / Commercial / Personal styling
+                        <br /> & Wardrobe consultations / Events
                     </h3>
                 </div>
                 <div className="flex w-full flex-col gap-8 p-5 text-center md:w-1/2">

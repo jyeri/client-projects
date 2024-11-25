@@ -32,6 +32,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
     const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
         null
     );
+    const upperTitle = metadata?.title?.toUpperCase();
     const [startIndex, setStartIndex] = useState(0);
     const [imagesToShow, setImagesToShow] = useState(4);
     const isLandscape = () => window.innerWidth > window.innerHeight;
@@ -93,7 +94,7 @@ export const Collage = ({ images, metadata }: CollageProps) => {
             <Container className="relative flex h-full max-h-[100svh] w-full flex-col items-center justify-center">
                 {metadata?.title && (
                     <h2 className="text-responsive-title relative w-full text-center font-headers font-bold tracking-wider text-textBlack">
-                        {metadata.title}
+                        {upperTitle}
                     </h2>
                 )}
                 {metadata?.description && (

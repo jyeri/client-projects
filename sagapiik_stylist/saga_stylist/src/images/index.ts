@@ -421,6 +421,7 @@ export const Ilona_images = {
         subdescription: 'Ilona Vuori / Wilhelmina Models',
         credits:
             'Styling by Saga Piik, photography by Johanna Rontu. Model: Ilona Vuori / Wilhelmina Models',
+        layout: 'portrait',
     },
     media: [
         {
@@ -460,6 +461,7 @@ export const Naku_images = {
         subdescription: 'Anna Edwards',
         credits:
             'Styling by Saga Piik, muah by Anu Uusipulkamo, photography by Johanna Rontu. Model: Anna Edwards',
+        layout: 'mixed',
     },
     media: [
         {
@@ -511,6 +513,7 @@ export const Jeanine_images = {
         subdescription: 'Jeanine Muyima / Brand Model Management',
         credits:
             'Styling by Saga Piik, muah by Susanne Nieminen, photography by Johanna Rontu. Model: Jeanine Muyima / Brand Model Management',
+        layout: 'portrait',
     },
     media: [
         {
