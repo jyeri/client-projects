@@ -28,8 +28,9 @@ export const Modal = ({
     const [previewIndex, setPreviewIndex] = useState<number | null>(
         selectedIndex
     ); // Initialize with selectedIndex
-    const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+    title = metadata.description;
+    description = metadata.subdescription;
     const isVideo = (url: string) => url.endsWith('.mp4');
 
     const handleNext = useCallback(() => {

@@ -25,7 +25,7 @@ type CollageProps = {
         description?: string;
         credits?: string;
     };
-    layout: 'portrait' | 'mixed' | 'landscape';
+    layout: string;
 };
 
 export const Collage = ({ images, metadata, layout }: CollageProps) => {
