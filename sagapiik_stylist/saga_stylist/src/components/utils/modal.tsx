@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faChevronLeft,
@@ -22,15 +22,12 @@ export const Modal = ({
     isOpen,
     onClose,
     images,
-    metadata,
     selectedIndex,
 }: ModalProps) => {
     const [previewIndex, setPreviewIndex] = useState<number | null>(
         selectedIndex
     ); // Initialize with selectedIndex
 
-    title = metadata.description;
-    description = metadata.subdescription;
     const isVideo = (url: string) => url.endsWith('.mp4');
 
     const handleNext = useCallback(() => {
