@@ -25,9 +25,10 @@ type CollageProps = {
         description?: string;
         credits?: string;
     };
+    layout: 'portrait' | 'mixed' | 'landscape';
 };
 
-export const Collage = ({ images, metadata }: CollageProps) => {
+export const Collage = ({ images, metadata, layout }: CollageProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
         null
@@ -39,21 +40,29 @@ export const Collage = ({ images, metadata }: CollageProps) => {
 
     useEffect(() => {
         const updateImagesToShow = () => {
-            if (isLandscape() && window.innerHeight <= 600) {
-                setImagesToShow(1);
-            }
-            else if (isLandscape() && window.innerHeight <= 800){
-                setImagesToShow(2);
-            }
-            else if (window.innerWidth >= 1024) {
-                // Large screens
-                setImagesToShow(4);
-            } else if (window.innerWidth >= 768) {
-                // Medium screens
-                setImagesToShow(2);
+            if (layout === 'portrait') {
+                if (window.innerWidth >= 1200) {
+                    setImagesToShow(3);
+                } else if (window.innerWidth >= 768) {
+                    setImagesToShow(2);
+                } else {
+                    setImagesToShow(1);
+                }
             } else {
-                // Small screens
-                setImagesToShow(1);
+                if (isLandscape() && window.innerHeight <= 600) {
+                    setImagesToShow(1);
+                } else if (isLandscape() && window.innerHeight <= 800) {
+                    setImagesToShow(2);
+                } else if (window.innerWidth >= 1024) {
+                    // Large screens
+                    setImagesToShow(4);
+                } else if (window.innerWidth >= 768) {
+                    // Medium screens
+                    setImagesToShow(2);
+                } else {
+                    // Small screens
+                    setImagesToShow(1);
+                }
             }
         };
 
@@ -103,7 +112,11 @@ export const Collage = ({ images, metadata }: CollageProps) => {
                     </h2>
                 )}
                 <motion.div
-                    className="collage-grid"
+                    className={`${
+                        layout === 'portrait'
+                            ? 'grid-cols-portrait'
+                            : 'collage-grid'
+                    }`}
                     key={startIndex}
                     initial={{ opacity: 0.8 }}
                     animate={{ opacity: 1 }}

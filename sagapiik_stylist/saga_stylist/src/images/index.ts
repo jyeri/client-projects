@@ -562,33 +562,33 @@ export const Jeanine_images = {
 export const Wetshow_images = {
     metadata: {
         description: 'Wet Show',
-        subdescription: 'Sim Liivik',
-        credits: 'Styling by Saga Piik, muah by Saga Piik',
+        subdescription: 'Atria Wilhelm',
+        credits: 'Muah by Saga Piik, TBWA Helsinki',
     },
     media: [
         {
             url: Wetshow_img1,
             alt: 'Wet Show 1',
-            styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'Guest: Lauri Haav',
         },
         {
             url: Wetshow_img2,
             alt: 'Wet Show 2',
-            styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'Guest: Sexmane',
         },
         {
             url: Wetshow_img3,
             alt: 'Wet Show 3',
-            styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'Guest: Janne Puhakka',
         },
         {
             url: Wetshow_img4,
             alt: 'Wet Show 4',
-            styling: 'Saga Piik',
             muah: 'Saga Piik',
+            credits: 'Siim Liivik',
         },
     ],
 };

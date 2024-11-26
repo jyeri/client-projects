@@ -27,6 +27,7 @@ export const Editorial = () => {
                             description: set.metadata.subdescription,
                             credits: set.metadata.credits,
                         }}
+                        layout={set.metadata.layout}
                     />
                 ))}
             </div>
