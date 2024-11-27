@@ -1,64 +1,73 @@
 import { useRef, useState, useEffect } from 'react';
 import { Container } from '../container/container';
 import { Modal } from './modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faChevronLeft,
+    faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 import useOrientation from '../hooks/useOrientation';
 
 type ImageProps = {
     src: string;
     alt: string;
-    images: { url: string; alt: string }[];
-    title: string;
-    subtitle?: string;
-    credits?: string;
-    image?: {
+    metadata: {
+        description?: string;
+        subdescription?: string;
         credits?: string;
-        muah?: string;
-        photography?: string;
-        styling?: string;
-        videography?: string;
     };
+    images: {
+        url: string;
+        alt: string;
+        styling?: string;
+        muah?: string;
+        credits?: string;
+        photography?: string;
+        videography?: string;
+    }[];
 };
 
-export function Image({
-    src,
-    alt,
-    images,
-    title,
-    subtitle,
-    credits,
-    image,
-}: ImageProps) {
+export function Image({ images, metadata }: ImageProps) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isVideoLandscape, setIsVideoLandscape] = useState(true);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
 
-    const isVideo = src.endsWith('.mp4');
-    const orientation = useOrientation(isVideo ? '' : src);
+    const isVideo = (url: string) => url.endsWith('.mp4');
+    const orientation = useOrientation(
+        isVideo(images[currentIndex].url) ? '' : images[currentIndex].url
+    );
 
     useEffect(() => {
-        if (isVideo) {
+        if (isVideo(images[currentIndex].url)) {
             const videoElement = document.createElement('video');
-            videoElement.src = src;
+            videoElement.src = images[currentIndex].url;
             videoElement.onloadedmetadata = () => {
                 setIsVideoLandscape(
                     videoElement.videoWidth > videoElement.videoHeight
                 );
             };
         }
-    }, [src, isVideo]);
+    }, [currentIndex, images]);
 
     const handleOpenModal = () => setIsModalOpen(true);
+
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        );
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+    };
 
     const landscapeClass =
         'max-h-[50vh] w-full sm:w-[70vw] md:w-[60vw] lg:w-[50vw] xl:w-[45vw]';
     const portraitClass =
         'w-auto max-h-[65svh] h-auto sm:w-[50vw] md:w-[40vw] lg:w-[35vw] xl:w-[30vw]';
-
-    const metadata = {
-        description: title,
-        subdescription: subtitle,
-        credits: credits || image?.credits,
-    };
 
     return (
         <section
@@ -68,7 +77,7 @@ export function Image({
             <Container className="relative flex h-full max-h-[100svh] w-full flex-col items-center justify-center">
                 <div
                     className={`group relative flex items-center justify-center bg-white ${
-                        isVideo
+                        isVideo(images[currentIndex].url)
                             ? isVideoLandscape
                                 ? landscapeClass
                                 : portraitClass
@@ -76,12 +85,16 @@ export function Image({
                               ? landscapeClass
                               : portraitClass
                     }`}
-                    onClick={!isVideo ? handleOpenModal : undefined}
+                    onClick={
+                        !isVideo(images[currentIndex].url)
+                            ? handleOpenModal
+                            : undefined
+                    }
                 >
                     <div className="relative flex h-full w-full items-center justify-center">
-                        {isVideo ? (
+                        {isVideo(images[currentIndex].url) ? (
                             <video
-                                src={isVideo ? `${src}#t=0.001` : src}
+                                src={`${images[currentIndex].url}#t=0.001`}
                                 className="h-full w-full object-contain"
                                 controls
                                 muted
@@ -92,22 +105,13 @@ export function Image({
                             />
                         ) : (
                             <img
-                                src={src}
-                                alt={alt}
+                                src={images[currentIndex].url}
+                                alt={images[currentIndex].alt}
                                 className="h-full w-full object-contain"
                             />
                         )}
 
-                        {isVideo && (
-                            <button
-                                className="absolute left-1/2 top-5 z-20 -translate-x-1/2 transform bg-black px-3 py-1 text-sm text-white opacity-60 transition-all duration-300 ease-in-out hover:opacity-100"
-                                onClick={handleOpenModal}
-                            >
-                                More about the project
-                            </button>
-                        )}
-
-                        {!isVideo && (
+                        {!isVideo(images[currentIndex].url) && (
                             <div
                                 className="absolute bottom-0 flex h-1/2 w-[80%] items-end justify-center bg-gradient-to-t from-black via-black/50 text-center font-headers text-sm font-light tracking-wide text-white opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 sm:text-base"
                                 style={{
@@ -116,30 +120,67 @@ export function Image({
                                 }}
                             >
                                 <div className="w-[80%] pb-6 md:pb-16">
-                                    {image?.styling && (
-                                        <p>Styling: {image.styling}</p>
+                                    {images[currentIndex].styling && (
+                                        <p>
+                                            Styling:{' '}
+                                            {images[currentIndex].styling}
+                                        </p>
                                     )}
-                                    {image?.muah && <p>MUAH: {image.muah}</p>}
-                                    {image?.credits && <p>{image.credits}</p>}
-                                    {image?.photography && (
-                                        <p>Photography: {image.photography}</p>
+                                    {images[currentIndex].muah && (
+                                        <p>MUAH: {images[currentIndex].muah}</p>
                                     )}
-                                    {image?.videography && (
-                                        <p>Videography: {image.videography}</p>
+                                    {images[currentIndex].credits && (
+                                        <p>{images[currentIndex].credits}</p>
+                                    )}
+                                    {images[currentIndex].photography && (
+                                        <p>
+                                            Photography:{' '}
+                                            {images[currentIndex].photography}
+                                        </p>
+                                    )}
+                                    {images[currentIndex].videography && (
+                                        <p>
+                                            Videography:{' '}
+                                            {images[currentIndex].videography}
+                                        </p>
                                     )}
                                 </div>
                             </div>
                         )}
                     </div>
                 </div>
+                {images.length > 1 && (
+                    <>
+                        <button
+                            onClick={handlePrev}
+                            className="arrow-button absolute left-4 top-1/2 -translate-y-1/2 transform lg:left-12 xl:left-24"
+                            aria-label="Previous"
+                        >
+                            <FontAwesomeIcon
+                                icon={faChevronLeft}
+                                className="icon-black text-sm md:text-base lg:text-xl"
+                            />
+                        </button>
+                        <button
+                            onClick={handleNext}
+                            className="arrow-button absolute right-4 top-1/2 -translate-y-1/2 transform lg:right-12 xl:right-24"
+                            aria-label="Next"
+                        >
+                            <FontAwesomeIcon
+                                icon={faChevronRight}
+                                className="icon-black text-sm md:text-base lg:text-xl"
+                            />
+                        </button>
+                    </>
+                )}
 
                 {/* Title positioning */}
                 <div className="container-padding relative mt-2 flex flex-col items-center justify-center md:mt-6">
                     <h2 className="font-headers text-lg font-bold text-backgroundContrast sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                        {title}
+                        {metadata.description}
                     </h2>
                     <p className="font-headers text-xs text-textBlack sm:text-sm md:text-base lg:text-lg xl:text-xl">
-                        {subtitle}
+                        {metadata.subdescription}
                     </p>
                 </div>
             </Container>
@@ -148,7 +189,7 @@ export function Image({
                 onClose={() => setIsModalOpen(false)}
                 images={images}
                 metadata={metadata}
-                selectedIndex={0}
+                selectedIndex={currentIndex}
             />
         </section>
     );

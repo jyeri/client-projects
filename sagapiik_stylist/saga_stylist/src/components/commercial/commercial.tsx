@@ -23,11 +23,12 @@ export const Commercial = () => {
                         <Image
                             src={set.media[0].url}
                             alt={set.media[0].alt}
-                            image={set.media[0]}
                             images={set.media}
-                            title={set.metadata.description}
-                            subtitle={set.metadata.subdescription ?? ''}
-                            credits={set.metadata.credits}
+                            metadata={{
+                                description: set.metadata.description,
+                                subdescription: set.metadata.subdescription,
+                                credits: set.metadata.credits,
+                            }}
                         />
                     </div>
                 ))}

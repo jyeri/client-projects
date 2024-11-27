@@ -183,7 +183,7 @@ export const Collage = ({ images, metadata, layout }: CollageProps) => {
                     <>
                         <button
                             onClick={handlePrev}
-                            className="arrow-button absolute left-4 top-1/2 -translate-y-1/2 transform lg:left-24"
+                            className="arrow-button absolute left-4 top-1/2 -translate-y-1/2 transform lg:left-12 xl:left-24"
                             aria-label="Previous"
                         >
                             <FontAwesomeIcon
@@ -193,7 +193,7 @@ export const Collage = ({ images, metadata, layout }: CollageProps) => {
                         </button>
                         <button
                             onClick={handleNext}
-                            className="arrow-button absolute right-4 top-1/2 -translate-y-1/2 transform lg:right-24"
+                            className="arrow-button absolute right-4 top-1/2 -translate-y-1/2 transform lg:right-12 xl:right-24"
                             aria-label="Next"
                         >
                             <FontAwesomeIcon
