@@ -52,3 +52,7 @@ This project is a collaboration with the talented **Saga Piik**. It was designed
     npm run dev
     ````
 
+
+## LOG -
+
+- V1.00 basic frontend funtionality, upcoming release version will have backend bundled to allow updating photosets aswell as support for using with mobile device in landscape mode.
