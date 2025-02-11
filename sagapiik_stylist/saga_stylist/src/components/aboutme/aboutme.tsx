@@ -47,44 +47,24 @@ export const Aboutme = () => {
                         </h2>
                         <p className="aboutme-text mt-5 font-headers text-sm md:text-base lg:text-lg">
                             <span>
-                                Hi there! My name is Saga Piik and I am a
-                                fashion stylist based in Helsinki. I have
-                                background in fashion marketing and I have
-                                studied fashion styling and photography in
-                                Milan.
+                                Hi there! My name is Saga Piik and I am a fashion stylist based in Helsinki.
+                                I have background in fashion marketing and have studied fashion styling and photography in Milan.
                             </span>
                             <br /> <br />
                             <span>
-                                How did I end up here? My journey started after
-                                graduating from high school in 2015. I have
-                                always been interested in fashion and I wanted
-                                to learn more about it. I decided to study
-                                fashion marketing in Helsinki Design School.
+                            How did I end up here? I have always been a visual person, finding beauty in even the most unusual things. 
+                            Since I was little, I loved wearing my mother’s clothes, 
+                            organizing my friends’ wardrobes, and giving them fashion advice.
                             </span>
                             <br />
                             <span>
-                                After that I worked in retail for a few years
-                                and I realized that I wanted to do something
-                                more creative. That's when I decided to start my
-                                own business. I founded Saga Piik Styling in
-                                2020 and I have been working as a stylist ever
-                                since. To further my knowledge in the field, I
-                                decided to study fashion styling and photography
-                                in Istituto Marangoni Milan.
+                            Later, my hobbies turned into studies at Helsinki Design School, focusing on fashion marketing, and at Istituto Marangoni in Milan, 
+                            where I studied fashion styling and photography.
                             </span>
                             <br /> <br />
                             <span>
-                                How could I be in your service? I am available
-                                for commercial and editorial projects. I offer
-                                styling services for photoshoots, fashion shows,
-                                events etc. I can also help you with personal
-                                styling and wardrobe consultations.
-                            </span>
-                            <br />
-                            <span>
-                                If you are interested in working with me, feel
-                                free to contact me. I am looking forward to
-                                hearing from you!
+                                How can I assist you? My greatest passion is offering personal styling and wardrobe consultations for events, photoshoots, and everyday life. 
+                                I’m also available for commercial and editorial shoots.
                             </span>
                         </p>
                     </div>

@@ -92,7 +92,7 @@
     align-items: center;
     justify-items: center;
     grid-template-columns: repeat(3, auto);
-    gap: 16px; /* Adjust spacing */
+    gap: 16px; 
 }
 
 .grid-cols-portrait .collage-item img {
@@ -123,7 +123,7 @@
     .collage-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
-        height: auto; /* Allow grid to scale */
+        height: auto;
     }
     .collage-grid .collage-item img {
         max-height: calc(60svh / 2);
@@ -151,7 +151,7 @@
         max-height: 60svh; /* Adjust max-height for mobile */
     }
     .collage-grid .collage-item img {
-        max-height: 50svh; /* Prevent images from growing too tall */
+        max-height: 50svh;
     }
 
     .title-container h2,
@@ -160,7 +160,6 @@
         font-size: 1.1rem;
     }
 
-    /* Container padding for extra spacing */
     .container-padding {
         padding-bottom: 1rem;
     }
@@ -185,7 +184,7 @@
         max-height: 60svh; /* Adjust max-height for mobile */
     }
     .collage-item img {
-        max-height: 50svh; /* Prevent images from growing too tall */
+        max-height: 50svh;
     }
 
     .title-container h2,
