@@ -36,8 +36,7 @@ export const Aboutme = () => {
                     </motion.div>
                     {/* This h3 is placed outside the flex container to ensure it doesn't affect the image size */}
                     <h3 className="mt-4 text-center font-headers text-xs text-textBlack sm:text-sm md:text-base">
-                        Editorial / Commercial / Personal styling
-                        <br /> & Wardrobe consultations / Events
+                    Personal styling & Wardrobe consultations / <br/> Events / Editorial / Commercial
                     </h3>
                 </div>
                 <div className="flex w-full flex-col gap-8 p-5 text-center md:w-1/2">
@@ -50,7 +49,7 @@ export const Aboutme = () => {
                                 Hi there! My name is Saga Piik and I am a fashion stylist based in Helsinki.
                                 I have background in fashion marketing and have studied fashion styling and photography in Milan.
                             </span>
-                            <br /> <br />
+                            <br />
                             <span>
                             How did I end up here? I have always been a visual person, finding beauty in even the most unusual things. 
                             Since I was little, I loved wearing my mother’s clothes, 
@@ -61,10 +60,20 @@ export const Aboutme = () => {
                             Later, my hobbies turned into studies at Helsinki Design School, focusing on fashion marketing, and at Istituto Marangoni in Milan, 
                             where I studied fashion styling and photography.
                             </span>
-                            <br /> <br />
+                            <br />
+                            <span>
+                            During those years, I worked in sales for a few years until I was certain I wanted to do something more creative. That’s when I decided to start my own business. I founded Saga Piik Styling in 2020 and have worked as a stylist ever since.
+                            </span>
+                            <br />
                             <span>
                                 How can I assist you? My greatest passion is offering personal styling and wardrobe consultations for events, photoshoots, and everyday life. 
                                 I’m also available for commercial and editorial shoots.
+                            </span>
+                            <br />
+                            <span>
+                                If you are interested in working with me, feel
+                                free to contact me. I am looking forward to
+                                hearing from you!
                             </span>
                         </p>
                     </div>
