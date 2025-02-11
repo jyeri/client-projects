@@ -176,10 +176,10 @@ export function Image({ images, metadata }: ImageProps) {
 
                 {/* Title positioning */}
                 <div className="container-padding relative mt-2 flex flex-col items-center justify-center md:mt-6">
-                    <h2 className="font-headers text-lg font-bold text-backgroundContrast sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                    <h2 className="text-responsive-title relative w-full text-center font-headers font-bold tracking-wide text-textBlack uppercase">
                         {metadata.description}
                     </h2>
-                    <p className="font-headers text-xs text-textBlack sm:text-sm md:text-base lg:text-lg xl:text-xl">
+                    <p className="text-responsive-description relative w-full p-2 text-center font-headers font-bold tracking-wider text-backgroundContrast">
                         {metadata.subdescription}
                     </p>
                 </div>
